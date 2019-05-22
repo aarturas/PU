@@ -14,11 +14,8 @@
 <div class="col-md-5">
 <div class="col-md-3">
  {{--                                      photo/skaidres ikelimas                            --}}
-        @if($destytoja->photo)
-             <a href="{{route('destytoja.download', $destytoja)}}">
-                 <img src="{{asset('img/'.$destytoja->photo)}}" style="object-fit: contain; height: 100px;">
-             </a>
-        @endif
+                 <img src="{{asset('img/'.$destytoja->file)}}" style="object-fit: contain; height: 100px;">
+      
 </div>
 </div>
 </div>

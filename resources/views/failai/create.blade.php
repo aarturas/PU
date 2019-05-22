@@ -15,9 +15,9 @@
 
          {{--                                1. Renkamės (select'u) paskaitas / kursus                                     --}}
 <div class="form-group">
-            <select class="form-control"name="kursai_id">
-                    @foreach (App\Kursai::all() as $item)
-                        <option value="{{$item->id}}">{{$item->name}} {{$item->surname}}</option>
+            <select class="form-control"name="paskaito_id">
+                    @foreach (App\Paskaito::all() as $item)
+                        <option value="{{$item->id}}">{{$item->pavadinimas}}</option>
                     @endforeach
             </select>
 </div>

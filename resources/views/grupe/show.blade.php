@@ -14,12 +14,12 @@
         <div><a href="{{route('grupe.edit', $grupe)}}">Editas</a></div>
 
 {{--                           Dėstytojo id?                              --}}
-<div><b> Destytojo id :</b> {{$grupe->destytoja_id}} </div>
+<div><b> Destytojo id :</b> {{$grupe->GrupeDestytoja->name}} </div>
 
 
 
 {{--                          Kursų id?                                 --}}
-        <div><b>Kursu id :</b> {{$grupe->kursai_id}}</div>
+        <div><b>Kursu id :</b> {{$grupe->GrupeKurpav->name}}</div>
 
 <div>
 {{--                           Info lentelėje: kursų pradžia                      --}}

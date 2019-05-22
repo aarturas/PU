@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 
 class FailaiController extends Controller
 {
-    
 
 
 
@@ -25,7 +24,6 @@ class FailaiController extends Controller
 
     }
 
-    
 
 
 
@@ -35,24 +33,30 @@ class FailaiController extends Controller
         return view('failai.create');
     }
 
-    
-
 
 
 
 
     public function store(Request $request)
     {
+
+        
+        $file = $request->file('photo') ?? false;
+        if ($file) {
+            $photo = basename($file->getClientOriginalName());    // failo vardas
+            $file->move(public_path('/img'), $photo);  // eilutes numetimas i ta vieta
+        }
+
+
         $failai = new Failai;
         $failai->paskaito_id = $request->paskaito_id;
-        $failai->file = $request->file;
+        $failai->file = $photo;
         $failai->name = $request->name;
         $failai->save();
 
         return redirect()->route('failai.index');
     }
 
-    
 
 
 
@@ -63,7 +67,6 @@ class FailaiController extends Controller
         //
     }
 
-    
 
 
 
@@ -75,7 +78,6 @@ class FailaiController extends Controller
 
     }
 
-   
 
 
 
@@ -90,8 +92,6 @@ class FailaiController extends Controller
 
         return redirect()->route('failai.index');
     }
-
-    
 
 
 

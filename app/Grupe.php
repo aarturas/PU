@@ -15,5 +15,19 @@ class Grupe extends Model
     {
         return $this->belongsTo('App\Paskaito', 'paskaito_id', 'id');
     }
+
+    // i show kortele irasome kelia iki destytojo vardo
+    public function GrupeDestytoja()
+    {
+        return $this->belongsTo('App\User', 'destytoja_id', 'id');
+    }
+
+    // i show kortele irasome kelia iki kursu pavadinimo
+
+    public function GrupeKurpav()
+    {
+        return $this->belongsTo('App\Grupe', 'kursai_id', 'id');
+    }
+
 }
 
