@@ -43,8 +43,11 @@ class GrupeController extends Controller
         $grupe->kursai_id = $request->kursai_id;
         $grupe->destytoja_id = $request->destytoja_id;
         $grupe->name = $request->name;
-        $grupe->started_at =  date('Y-m-d H:i:s', strtotime($request->started_at));
-        $grupe->finished_at =  date('Y-m-d H:i:s', strtotime($request->finished_at));
+        $grupe->started_at =  date('Y-m-d H:i:s', strtotime(str_replace('.', '-', $request->started_at)));
+        // $grupe->started_at =  date('Y-m-d H:i:s', strtotime($request->started_at));
+        // dd(strtotime($request->started_at));
+        $grupe->finished_at =  date('Y-m-d H:i:s', strtotime(str_replace('.', '-', $request->finished_at)));
+        // $grupe->finished_at =  date('Y-m-d H:i:s', strtotime($request->finished_at));
         $grupe->save();
 
         return redirect()->route('grupe.index');
@@ -81,8 +84,12 @@ class GrupeController extends Controller
         $grupe->kursai_id = $request->kursai_id;
         $grupe->destytoja_id = $request->destytoja_id;
         $grupe->name = $request->pavadinimas;
-        $grupe->started_at =  date('Y-m-d H:i:s', strtotime($request->started_at));
-        $grupe->finished_at =  date('Y-m-d H:i:s', strtotime($request->finished_at));
+        // $grupe->started_at =  date('Y-m-d H:i:s', strtotime($request->started_at));
+        $grupe->started_at =  date('Y-m-d H:i:s', strtotime(str_replace('.', '-', $request->started_at)));
+
+        // $grupe->finished_at =  date('Y-m-d H:i:s', strtotime($request->finished_at));
+        $grupe->finished_at =  date('Y-m-d H:i:s', strtotime(str_replace('.', '-', $request->finished_at)));
+
         $grupe->save();
 
         return redirect()->route('grupe.index');

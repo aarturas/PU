@@ -11,32 +11,34 @@
 <div class="list-group">
 
 {{--             Nuoroda i kelia, jeigu pasirenkame 'edit', nukreipiami i 'grupe.edit' kelia     --}}
-        <div><a href="{{route('grupe.edit', $grupe)}}">Editas</a></div>
+<div><a href="{{route('grupe.edit', $grupe)}}">Editas</a></div>
 
-{{--                           Dėstytojo id?                              --}}
-<div><b> Destytojo id :</b> {{$grupe->GrupeDestytoja->name}} </div>
+{{--                           Dėstytojo id?  Vardas                                             --}}
+{{-- <div><b> Destytojo id :</b> {{$grupe->destytoja_id}} </div>                                 --}}
+<div><b> Destytojas :</b> {{$grupe->GrupeDestytoja->name}} </div>
 
 
+{{--                          Kursų id?   Pavadinimas                                            --}}
+        {{-- <div><b>Kursu id :</b> {{$grupe->kursai_id}}</div> --}}
+<div><b> Kursų pavadinimas :</b> {{$grupe->GrupeKurpav->name}} </div>
 
-{{--                          Kursų id?                                 --}}
-        <div><b>Kursu id :</b> {{$grupe->GrupeKurpav->name}}</div>
 
 <div>
-{{--                           Info lentelėje: kursų pradžia                      --}}
+{{--                           Info lentelėje: kursų pradžia                                     --}}
         <b>Kursų pradžia:</b>
             {{$grupe->started_at}} 
 </div>
 
 <div>
- {{--                          info lenteleje: kursų pabaiga                      --}}
+ {{--                          info lenteleje: kursų pabaiga                                     --}}
          <b>Kursų pabaiga:</b>
               {{$grupe->finished_at}}
  </div>
 
-{{--                           Pastabos apie kazka...                            --}}
+{{--                           Pastabos apie kazka...                                           --}}
         <h3>Notices:</h3>
 <div>
-{{--                           Turi buti šauktukai, kitaip nerodys pastabų       --}}
+{{--                           Turi buti šauktukai, kitaip nerodys pastabų                      --}}
             {!!$grupe->aprasas!!}
                     
 </div>  

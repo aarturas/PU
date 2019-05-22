@@ -1,8 +1,7 @@
 @extends('layouts.app')
-
-<h4 style="padding-left:30%">index.blade.grupes</h4>
-<h3 style="padding-left:20%">grupių redagavimas</h3>
-                                              @section('content')
+@section('content')
+                       <h6 style="padding-left:45%">index.blade.grupes</h6>
+                       <h3 style="padding-left:40%">grupių redagavimas</h3>
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="card">

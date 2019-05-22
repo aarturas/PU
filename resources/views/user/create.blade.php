@@ -12,14 +12,14 @@
                     
                     <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data"> 
 
-                                   {{-- Userio vardas  --}}
+{{--                                             Userio vardas                                                               --}}
 <div class="form-group">
     <label for="name">Useriu vardas</label>
         <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Useriu vardas" value="{{old('name', $user->name)}}">
     <small id="emailHelp" class="form-text text-muted">Please, enter new user name. Max lenght 64 symbols.</small>
 </div>
 
-                                         {{-- Userio pavarde --}}
+ {{--                                           Userio pavarde                                                               --}}
 <div class="form-group">
     <label for="surname">Vartotoju pavarde</label>
         <input type="text" class="form-control" name="surname" id="surname" aria-describedby="emailHelp" placeholder="Vartotoju pavarde" value="{{old('surname', $user->surname)}}">
