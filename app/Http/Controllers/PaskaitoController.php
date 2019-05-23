@@ -39,11 +39,9 @@ class PaskaitoController extends Controller
     {
         $paskaito = new Paskaito;
         $paskaito->grupe_id = $request->grupe_id;
-        // $paskaito->data = $request->data;
+    //  $paskaito->data = $request->data;
         $paskaito->data =  date('Y-m-d H:i:s', strtotime($request->data));
-
         $paskaito->pavadinimas = $request->pavadinimas;
-
         $paskaito->aprasas = $request->aprasas;
         $paskaito->save();
 

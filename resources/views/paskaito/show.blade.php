@@ -6,7 +6,7 @@
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="card">
-<div class="card-header" style="color:blue">Paskaitos {{$paskaito->name}} informacija :</div>
+<div class="card-header" style="color:blue">Paskaitos : {{$paskaito->pavadinimas}} informacija :</div>
 <div class="card-body">
 <div class="list-group">
 

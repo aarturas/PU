@@ -13,7 +13,7 @@ class CreatePaskaitosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('grupe_id');
             $table->foreign('grupe_id')->references('id')->on('grupes');
-            // $table->timestamp('added_on');
+    //      $table->timestamp('added_on');
             $table->text('data')->nullable();
             $table->string('pavadinimas',64);
             $table->text('aprasas',255);
