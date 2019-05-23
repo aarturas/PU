@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-                                                 <h5 style="padding-left:40%">create.blade.paskaitos</h5>
-                                                 <h3 style="padding-left:30%">Naujos paskaitos įrašymas</h3>
+                                        <h6 style="padding-left:40%">create.blade.paskaitos</h6>
+                                        <h3 style="padding-left:30%">Naujos paskaitos įrašymas</h3>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">
@@ -47,7 +47,6 @@
 </div>
 </div>
 
-           
  <script>
         $(document).ready(function() {
         $('#summernote').summernote();
