@@ -12,7 +12,7 @@
 
 <div class="col-sm-12">
                                          
-       {{--                                                     1. Grupes pavadinimo pasirinkimas (select)                                                            --}}
+       {{--                                                              1. Grupes pavadinimo pasirinkimas (select)                                                            --}}
 <div class="form-group">
             <label>Pasirinkti grupę</label>
             <select class="form-control"  name="grupe_id">
@@ -40,9 +40,9 @@
 {{--                                                                      4.  Įdedame summernote'a                                                        --}}
 <div class="form-group">
                                       <label for="summernote">Aprašas</label>
-                                    {{-- !!  ir  !! - tagus daro matomus summernote langelyje --}}
+ {{--                                                                              !!  ir  !! - tagus daro matomus summernote langelyje                   --}}
             <textarea class="form-control" id="summernote" name="aprasas" rows="3">{{!!old ('aprasas', $paskaito->aprasas)!!}}</textarea>
-            <small class="form-text text-muted">Prašome įrašyti pastabas apie paskaitas.</small>
+            <small class="form-text text-muted">Prašome įrašyti savo pastabas apie paskaitas.</small>
 </div>
                     @csrf
         <button type="submit" class="btn btn-primary">Enter</button>
