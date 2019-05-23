@@ -11,6 +11,38 @@
     
                     <form action="{{route('grupe.update', [$grupe])}}" method="POST">  
 
+                         {{--                                              Pridedame/pasirenkame kursus i grupe                                      --}}
+<div class="form-group">
+        <label for="kursai_id">Pridėti paskaitą grupei</label>
+<select class="form-control" id="kursai_id" name="kursai_id">
+@foreach (App\Kursai::all() as $item)
+<option value="{{$item->id}}" @if($item->id==$grupe->kursai_id) selected @endif>{{$item->name}} {{$item->surname}}</option>
+@endforeach
+</select>
+<small class="form-text text-muted">Prašom pasirinkti paskaitą.</small>
+</div>
+
+
+ {{--                                             Renkamės destytoją pagal vardą, pavardę                                    --}}
+ <div class="form-group">
+        <label for="destytoja_id">Pasirinkite dėstytoją</label>
+<select class="form-control" id="destytoja_id" name="destytoja_id">
+@foreach ($destytojai as $item)
+<option value="{{$item->id}}">{{$item->name}} {{$item->surname}}</option>
+@endforeach
+</select>
+</div>
+
+
+ {{--                                                  Paskaitų pavadinimas                                                     --}}
+ <div class="form-group">
+        <label for="pavadinimas">Paskaitų pavadinimas</label>
+        <input type="text" class="form-control" name="pavadinimas" id="pavadinimas" aria-describedby="emailHelp" placeholder="Paskaitų pavadinimas" value="{{old('pavadinimas', $grupe->pavadinimas)}}">
+        <small class="form-text text-muted">Paskaitų pavadinimas</small>
+</div>
+
+
+
  {{--                                                  Grupės paskaitų pradžia                                                 --}}
 <div class="form-group">
         <label for="started_at">Grupės paskaitų pradžia</label>
@@ -23,32 +55,10 @@
         <input type="text" class="form-control" name="finished_at" id="finished_at" aria-describedby="emailHelp" placeholder="Grupė finished_at" value="{{old('finished_at', $grupe->finished_at)}}">
         <small class="form-text text-muted">Grupės mokymų pabaiga.</small>
 </div>
- {{--                                                  Paskaitų pavadinimas                                                     --}}
-<div class="form-group">
-        <label for="pavadinimas">Paskaitų pavadinimas</label>
-        <input type="text" class="form-control" name="pavadinimas" id="pavadinimas" aria-describedby="emailHelp" placeholder="Paskaitų pavadinimas" value="{{old('pavadinimas', $grupe->pavadinimas)}}">
-        <small class="form-text text-muted">Paskaitų pavadinimas</small>
-</div>
-     {{--                                              Pridedame/pasirenkame kursus i grupe                                      --}}
-<div class="form-group">
-                                      <label for="kursai_id">Pridėti paskaitą grupei</label>
-        <select class="form-control" id="kursai_id" name="kursai_id">
-            @foreach (App\Kursai::all() as $item)
-                <option value="{{$item->id}}" @if($item->id==$grupe->kursai_id) selected @endif>{{$item->name}} {{$item->surname}}</option>
-            @endforeach
-        </select>
-                            <small class="form-text text-muted">Prašom pasirinkti paskaitą.</small>
-</div>
 
-   {{--                                             Renkamės destytoją pagal vardą, pavardę                                    --}}
-<div class="form-group">
-                                       <label for="destytoja_id">Pasirinkite dėstytoją</label>
-        <select class="form-control" id="destytoja_id" name="destytoja_id">
-                @foreach ($destytojai as $item)
-                    <option value="{{$item->id}}">{{$item->name}} {{$item->surname}}</option>
-                @endforeach
-        </select>
-</div>
+    
+
+  
 
  {{--                                Mokinio pavadinimo įrašymas                     --}}
  <div class="form-group">

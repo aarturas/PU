@@ -12,24 +12,23 @@
                     
                     <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data"> 
 
-{{--                                             Userio vardas                                                               --}}
+{{--                                            1. Userio vardas                                                               --}}
 <div class="form-group">
     <label for="name">Useriu vardas</label>
         <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Useriu vardas" value="{{old('name', $user->name)}}">
     <small id="emailHelp" class="form-text text-muted">Please, enter new user name. Max lenght 64 symbols.</small>
 </div>
 
- {{--                                           Userio pavarde                                                               --}}
+ {{--                                         2.  Userio pavarde                                                                                                  --}}
 <div class="form-group">
     <label for="surname">Vartotoju pavarde</label>
         <input type="text" class="form-control" name="surname" id="surname" aria-describedby="emailHelp" placeholder="Vartotoju pavarde" value="{{old('surname', $user->surname)}}">
     <small id="emailHelp" class="form-text text-muted">Please, enter new user surname. Max lenght 64 symbols.</small>
 </div>
 
-
 <div class="row">
         <div class="col-sm-6">
-                                
+{{--                                         3.  el.pastas / email                                                                                                 --}}
         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                 <label for="email">Email:</label>
                     <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email" value="{{ old('email') }}">
@@ -38,7 +37,7 @@
         </div>
                                             
         <div class="col-sm-6">
-                                
+ {{--                                           4.  telefonas / phone                                                                                               --}}
         <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
                 <label for="phone">Phone No:</label>
                     <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter Phone No" value="{{ old('phone') }}">
@@ -47,7 +46,7 @@
         </div>
         </div>
 
-               {{--                            Nuotraukos                                 --}}
+{{--                                             5.    Nuotraukos                                                                                               --}}
 {{-- <div class="form-group">
     <label for="name">Mechanic Photo</label>
         <input type="file" class="form-control-file" name="photo" id="photo">
@@ -65,10 +64,16 @@
 
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+
+
+
+
 @endsection

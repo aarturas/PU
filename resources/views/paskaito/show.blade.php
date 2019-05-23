@@ -18,19 +18,16 @@
 
 {{-- <div><b> Destytojo vardas :</b> {{$destytoja->name}} </div> --}}
 
-
 {{--                          Kursų id?                                 --}}
         <div><b>Kursu id :</b> {{$paskaito->kursai_id}}</div>
 
 <div>
 
-
 {{--                           Pastabos apie kazka...                            --}}
         <h3>Notices:</h3>
 <div>
-{{--                           Turi buti šauktukai, kitaip nerodys pastabų       --}}
+{{--                           Turi buti 'šauktukai', kitaip nerodys pastabų       --}}
             {!!$paskaito->aprasas!!}
-                    
 </div>  
 </div>
 </div>
@@ -38,5 +35,11 @@
 </div>
 </div>
 </div>
+
+
+
+
+
+
 
 @endsection

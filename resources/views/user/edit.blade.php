@@ -8,9 +8,9 @@
 <div class="card">
 <div class="card-body">
 
-    <form action="{{route('user.update',[$user])}}" method="POST">
+                               <form action="{{route('user.update',[$user])}}" method="POST">
 
-          {{-- langelis su jau irasytais user vardu ir pavarde is ankstesnes lenteles --}}
+{{--                                          langelis su jau irasytais user vardu ir pavarde is ankstesnes lenteles                                           --}}
                         <input  type = "text"  name = "name" value = "{{old('name', $user->name)}}">
                         <input type = "text" name = "surname" value = "{{old('surname', $user->surname)}}">
 <div class="row">
@@ -56,13 +56,12 @@
         <button type="submit" class="btn btn-primary">Enter</button>
 </div>
                 @csrf
-    </form>
+                               </form>
 </div>
 </div>
 </div>
 </div>
 </div>
-
  {{--                        isikeliame summernote'a atsiranda "irankiu juosta                             --}}
             <script>
                 $(document).ready(function()    {
