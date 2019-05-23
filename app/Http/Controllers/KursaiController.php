@@ -29,6 +29,7 @@ class KursaiController extends Controller
 
     {
         $destytojai = User::where('tipa', 1);
+        
         return view('kursai.create', ['destytojai'=> $destytojai] ) ;
     }
 

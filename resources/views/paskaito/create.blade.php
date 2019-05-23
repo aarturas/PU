@@ -36,7 +36,7 @@
    <div class="form-group">
                                        <label for="summernote">Aprašas</label>
             <textarea class="form-control" id="summernote" name="aprasas" rows="3"></textarea>
-    <small class="form-text text-muted">Prašom įrašyti savo pastabas</small>
+            <small class="form-text text-muted">Prašom įrašyti savo pastabas</small>
 </div>
                     @csrf
                                        <button type="submit" class="btn btn-primary">Įrašyti</button>

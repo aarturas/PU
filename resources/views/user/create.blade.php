@@ -15,14 +15,14 @@
 {{--                                            1. Userio vardas                                                               --}}
 <div class="form-group">
     <label for="name">Useriu vardas</label>
-        <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Useriu vardas" value="{{old('name', $user->name)}}">
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Useriu vardas" value="{{old('name')}}">
     <small id="emailHelp" class="form-text text-muted">Please, enter new user name. Max lenght 64 symbols.</small>
 </div>
 
  {{--                                         2.  Userio pavarde                                                                                                  --}}
 <div class="form-group">
     <label for="surname">Vartotoju pavarde</label>
-        <input type="text" class="form-control" name="surname" id="surname" aria-describedby="emailHelp" placeholder="Vartotoju pavarde" value="{{old('surname', $user->surname)}}">
+        <input type="text" class="form-control" name="surname" id="surname" aria-describedby="emailHelp" placeholder="Vartotoju pavarde" value="{{old('surname')}}">
     <small id="emailHelp" class="form-text text-muted">Please, enter new user surname. Max lenght 64 symbols.</small>
 </div>
 
@@ -62,8 +62,31 @@
 </div> --}}
                     @csrf
 
+
+                    <select name="tipa">
+                            <option value="1">Destytojas</option>
+                            <option value="2">Studentas</option>
+                        </select>
+
+                        <div class="form-group">
+                                <label>Useriu passwordas</label>
+                                    <input type="text" class="form-control" name="password" placeholder="Useriu vardas" value="{{old('name')}}">
+                                <small  class="form-text text-muted">Please, enter new user name. Max lenght 64 symbols.</small>
+                        </div>
+
+
+
                     <button type="submit" class="btn btn-primary">Update</button>
+
+
+
+
+
+
                 </form>
+
+
+                
 </div>
 </div>
 </div>

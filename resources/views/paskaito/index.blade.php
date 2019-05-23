@@ -9,7 +9,6 @@
 <div class="card-header" style="color:blue">Paskaitų sąrašas</div>
 <div class="card-body">
 <div class="list-group">
-                        
                     @foreach ($collection as $paskaito)
 <div class="row" style="margin-bottom: 10px;">
 <div class="col-md-9">

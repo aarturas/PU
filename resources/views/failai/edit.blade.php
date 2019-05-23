@@ -6,12 +6,13 @@
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="card">
-<div class="card-header">Edit {{$file->name}}</div>
+<div class="card-header">Edit {{$failai->name}}</div>
 <div class="card-body">
                     
-                     <form action="{{route('failai.update', $file)}}" method="POST" enctype="multipart/form-data">  
+                     <form action="{{route('failai.update', $failai)}}" method="POST" enctype="multipart/form-data">  
+
 <div class="form-group">
-       <label for="name">File name</label>
+       <label for="name">File pavadinimas</label>
        <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="File name" value="{{old('name', $failai->name)}}">
        <small id="emailHelp" class="form-text text-muted">Please, enter new failai name. Max lenght 64 symbols.</small>
 </div>

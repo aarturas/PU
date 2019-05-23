@@ -21,7 +21,7 @@
         <label for="paskaito_id">Prideti grupę</label>
             <select class="form-control" id="paskaito_id" name="paskaito_id">
                     @foreach (App\Paskaito::all() as $item)
-                       <option value="{{$item->id}}">{{$item->name}} {{$item->address}} </option>
+                       <option value="{{$item->id}}">{{$item->pavadinimas}} </option>
                     @endforeach
             </select>
         <small class="form-text text-muted">Please, select paskaito from the list.</small>

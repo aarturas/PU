@@ -64,7 +64,7 @@ class PaskaitoController extends Controller
 
     public function edit(Paskaito $paskaito)
     {
-        return view('paskaito.index', ['collection' => Paskaito::all(),'paskaito' => $paskaito]);
+        return view('paskaito.edit', ['collection' => Paskaito::all(),'paskaito' => $paskaito]);
     }
 
 

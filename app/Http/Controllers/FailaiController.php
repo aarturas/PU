@@ -30,7 +30,9 @@ class FailaiController extends Controller
 
     public function create()
     {
-        return view('failai.create');
+        $destytojai = User::where('tipa', 1)->get();
+
+        return view('failai.create', ['destytojai'=> $destytojai] ) ;
     }
 
 
@@ -64,7 +66,7 @@ class FailaiController extends Controller
 
     public function show(Failai $failai)
     {
-        //
+        return view('failai.show', ['failai' => $failai]);
     }
 
 
@@ -84,8 +86,15 @@ class FailaiController extends Controller
 
     public function update(Request $request, Failai $failai)
     {
-        $failai->paskaito_id = $request->paskaito_id;
-        $failai->file = $request->file;
+
+        $file = $request->file('photo') ?? false;
+        if ($file) {
+            $photo = basename($file->getClientOriginalName());    // failo vardas
+            $file->move(public_path('/img'), $photo);  // eilutes numetimas i ta vieta
+        }
+
+        // $failai->paskaito_id = $request->paskaito_id;
+        $failai->file = $photo;
         $failai->name = $request->name;
         $failai->save();
 

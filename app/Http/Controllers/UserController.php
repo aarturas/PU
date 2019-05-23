@@ -7,15 +7,13 @@ use App\Paskaito;
 use App\Grupe;
 use App\Kursai;
 use App\User;
+use Hash;
 
 
 use Illuminate\Http\Request;
 
-
-
 class UserController extends Controller
 {
-
 
     public function index()
     {
@@ -28,12 +26,12 @@ class UserController extends Controller
 
     public function create()
     {
-        // return view('user.edit', ['collection' => Grupe::all(),'User' => $user]);
 
-        // return view('user.create', ['user'=> User::all()]);
-        // return view('user.create',['user'=> $user]);
+    //  return view('user.edit', ['collection' => Grupe::all(),'User' => $user]);
+    //  return view('user.create', ['user'=> User::all()]);
+    //  return view('user.create',['user'=> $user]);
+
         return view('user.create');
-
     }
 
 
@@ -47,10 +45,15 @@ class UserController extends Controller
         $user->surname = $request->surname;
         $user->email = $request->email;
         $user->phone = $request->phone;
+
+        $user->password =  Hash::make($request->password);
+    
+
         $user->save();
 
         return redirect()->route('user.index');
     }
+
 
 
     public function show(User $user)
@@ -60,9 +63,10 @@ class UserController extends Controller
     }
 
 
+
     public function edit(User $user)
     {
-        return view('user.edit', ['collection' => Grupe::all(),'User' => $user]);
+        return view('user.edit', ['collection' => Grupe::all(),'user' => $user]);
 
     }
 
@@ -81,13 +85,11 @@ class UserController extends Controller
     }
 
 
+
     public function destroy(User $user)
     {
         $user->delete();
         return redirect()->route('user.index')->with('success_message', 'Vartotojai '.$user->name.' '.$user->surname.' was given to Kursai!');
     }
-
-
-
 
 }
