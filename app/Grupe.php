@@ -11,18 +11,24 @@ class Grupe extends Model
         return $this->belongsTo('App\Kursai', 'kursai_id', 'id');
     }
 
+    
     public function GrupePaskaito()
     {
         return $this->belongsTo('App\Paskaito', 'paskaito_id', 'id');
     }
 
-    // i show kortele irasome kelia iki destytojo vardo
+
+    //        1.  į 'show' kortelę irašome kelią iki dėstytojo vardo :
+    //                  kortelėje rodo dėstytojo vardą
+
     public function GrupeDestytoja()
     {
         return $this->belongsTo('App\User', 'destytoja_id', 'id');
     }
 
-    // i show kortele irasome kelia iki kursu pavadinimo
+
+    //         2.   į 'show' kortelę įrašome kelią iki kursų pavadinimo
+    //                   kortelėje rodo: kurso / grupės pavadinimą
 
     public function GrupeKurpav()
     {

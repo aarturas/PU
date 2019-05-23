@@ -8,7 +8,7 @@
 <div class="card">
 <div class="card-header" style="color:blue">Nauja paskaita</div>
 <div class="card-body">
-                               <form action="{{route('paskaito.store')}}" method="POST">
+                    <form action="{{route('paskaito.store')}}" method="POST">
 {{--                                                                         Įrašome paskaitos pavadinimą                                       --}}
 <div class="form-group">
         <label for="paskaito name">Paskaitos pavadinimas</label>

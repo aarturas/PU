@@ -39,14 +39,21 @@ class User extends Authenticatable
 
 
 
+
+
 // class User extends Model
 
-// {
     public function UserKursai()
     {
         return $this->belongsTo('App\Kursai', 'kursai_id', 'id');
     }
+
+
+    //               bandau 'kazka daryti' su user , kad matytu browseryje ("undefined variable:user")
+    public function UserGrupe()
+    {
+        return $this->belongsTo('App\User', 'user_id', 'id');
+    }
     
-// }
 
 }

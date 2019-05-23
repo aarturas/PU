@@ -7,8 +7,9 @@
 <div class="col-md-8">
 <div class="card">
 <div class="card-body">
+                        {{-- <form action="{{route('user.update',[$user])}}" method="POST"> --}}
+                        <form action="{{route('user.store')}}" method="POST">
 
-                               <form action="{{route('user.update',[$user])}}" method="POST">
 
 {{--                                          langelis su jau irasytais user vardu ir pavarde is ankstesnes lenteles                                           --}}
                         <input  type = "text"  name = "name" value = "{{old('name', $user->name)}}">

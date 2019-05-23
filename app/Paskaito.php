@@ -11,8 +11,17 @@ class Paskaito extends Model
         return $this->belongsTo('App\Kursai', 'kursai_id', 'id');
     }
 
+    
     public function PaskaitoGrupe()
     {
         return $this->belongsTo('App\Grupe', 'grupe_id', 'id');
     }
+
+
+//             bandau padaryti kelia, kad isgautu info apie kursus
+    public function PaskaitoKurpav()
+    {
+        return $this->belongsTo('App\Grupe', 'kursai_id', 'id');
+    }
+
 }
