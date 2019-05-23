@@ -10,8 +10,7 @@
 <div class="card-body">
                     <form action="{{route('paskaito.store')}}" method="POST">
 
-{{--                                                                     1.  Įrašome paskaitą                                                         --}}
-<div class="col-sm-6">
+<div class="col-sm-12">
                                          
        {{--                                                     1. Grupes pavadinimo pasirinkimas (select)                                                            --}}
 <div class="form-group">

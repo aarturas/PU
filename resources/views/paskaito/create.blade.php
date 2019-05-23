@@ -47,11 +47,11 @@
 </div>
 </div>
 
- <script>
+<script>
         $(document).ready(function() {
         $('#summernote').summernote();
                                    });
-  </script>
+</script>
 
 
 
