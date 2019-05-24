@@ -1,20 +1,35 @@
 @extends('layouts.app')
-
-<h4 style="padding-left:30%">index.blade.user</h4>
-<h3 style="padding-left:20%">Userių redagavimas</h3>
-                                              @section('content')
+@section('content')
+                           <h6 style="padding-left:45%">index.blade.user</h6>
+                           <h3 style="padding-left:40%">Vartotoju sąrašas</h3>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="card">
-<div class="card-header">Userių sąrašas</div>
+<div class="card-header">Vartotoju sąrašas</div>
 <div class="card-body">
 <div class="list-group">
                                               @foreach ($collection as $user)
 <div class="row" style="margin-bottom: 10px;">
 <div class="col-md-9">
-                        <a href="{{route('user.show', $user)}}" class="list-group-item list-group-item-action list-group-item-primary">{{$user->name}} Kursai: {{$user->name}}</a>
+<a href="{{route('user.show', $user)}}" class="list-group-item list-group-item-action list-group-item-primary">{{$user->name}} {{$user->surname}} </a>
 </div>
+
+
+ {{--                                                   1.  Customer name - vardas                                                                                   --}}
+ {{-- <div class="form-group">
+    <label for="name">Vartotoju name</label>
+<input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Vartotojo vardas" value="{{old('name', '')}}">
+<small class="form-text text-muted">Please, enter a new customer name. Max lenght 255 symbols.</small>
+</div> --}}
+{{--                                                   2.  Customer name - pavarde                                                                                   --}}
+{{-- <div class="form-group">
+    <label for="surname">Vartotoju surname</label>
+<input type="text" class="form-control" name="surname" id="surname" aria-describedby="emailHelp" placeholder="Vartotojo pavarde" value="{{old('surname', '')}}">
+<small class="form-text text-muted">Please, enter a new customer surname. Max lenght 255 symbols.</small>
+</div> --}}
+
+
 
 <div class="col-md-3" style="display:flex; justify-content:space-around; align-items:center;">
 

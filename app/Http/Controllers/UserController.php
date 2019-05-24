@@ -45,7 +45,7 @@ class UserController extends Controller
         $user->surname = $request->surname;
         $user->email = $request->email;
         $user->phone = $request->phone;
-
+        //         irasome slaptazodzio laukeliui privaloma slaptazodi
         $user->password =  Hash::make($request->password);
     
 
