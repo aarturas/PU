@@ -11,8 +11,21 @@
                         <form action="{{route('user.store')}}" method="POST">
 
 {{--                                          langelis su jau irasytais user vardu ir pavarde is ankstesnes lenteles                                           --}}
-                <input  type = "text"  name = "name" value = "{{old('name', $user->name)}}">
-                <input type = "text" name = "surname" value = "{{old('surname', $user->surname)}}">
+
+{{--                                            1. Userio vardas                                                               --}}
+<div class="form-group">
+        <label for="name">Userio vardas</label>
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Useriu vardas" value="{{old('name', $user->name)}}">
+        <small id="emailHelp" class="form-text text-muted">Please, enter new user name. Max lenght 64 symbols.</small>
+</div>
+
+{{--                                         2.  Userio pavarde                                                                                                  --}}
+<div class="form-group">
+        <label for="surname">Userio pavarde</label>
+        <input type="text" class="form-control" name="surname" id="surname" aria-describedby="emailHelp" placeholder="Userio pavarde" value="{{old('surname', $user->surname)}}">
+        <small id="emailHelp" class="form-text text-muted">Please, enter new user surname. Max lenght 64 symbols.</small>
+</div>
+
 <div class="row">
 <div class="col-md-6">
 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
@@ -40,21 +53,6 @@
             <small class="form-text text-muted">Please, wright a new comment. Max lenght 200 symbols.</small>
 </div>
 
-                                         {{-- summernote --}}
-{{-- <div class="form-group">
-                        <label for="summernote">Notices</label>
-                            <textarea class="form-control" id="summernote" name="user_notices" rows="3"></textarea>
-                        <small class="form-text text-muted">Please, enter notices about this user.</small>
-</div> --}}
-
-{{-- <div class="col-sm-6">
-                        <label for="email">Grupes id:</label>
-                <input type="text" id="grupe_id" name="grupe_id" class="form-control" placeholder="Companie id" value="{{ old('grupe_id') }}">
-                    <span class="text-danger">{{ $errors->first('grupe_id') }}</span>
-                <small class="form-text text-muted">Please, enter grupes id number.</small>
-</div> --}}
-
-
 {{--                                   5.   'Tipo' pasirinkimas - ar dėstytoją, ar studentą pasirnkti                                 --}}
 <select name="tipa">
         {{-- <option value="1">Destytojas</option> --}}
@@ -63,9 +61,7 @@
         <option value="2">Studentas</option>
 </select>
 
-
 <button type="submit" class="btn btn-primary">Enter</button>
-
                 @csrf
                                </form>
 </div>

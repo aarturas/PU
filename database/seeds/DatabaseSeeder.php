@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Antanas',
             'email' => 'pu@gmail.com',
             'password' => Hash::make('123'),
-            'surname' => 'pirmas',
+            'surname' => 'Grumblinas',
             'tipa' => 1,
             'phone' => '123'
         ]);
@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Gediminas',
             'email' => 'gediminas@gmail.com',
             'password' => Hash::make('123'),
-            'surname' => 'antras',
+            'surname' => 'Grigaitis',
             'tipa' => 1,
             'phone' => '123'
         ]);
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Laimonas',
             'email' => 'laimonas2@gmail.com',
             'password' => Hash::make('123'),
-            'surname' => 'trecias',
+            'surname' => 'Rakaitis',
             'tipa' => 1,
             'phone' => '123'
         ]);
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Gintaras',
             'email' => 'gintaras@gmail.com',
             'password' => Hash::make('123'),
-            'surname' => 'ketvirtas',
+            'surname' => 'Dudenas',
             'tipa' => 1,
             'phone' => '123'
         ]);
@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Tadas',
             'email' => 'tadas@gmail.com',
             'password' => Hash::make('123'),
-            'surname' => 'penktas',
+            'surname' => 'Trumpickas',
             'tipa' => 1,
             'phone' => '123'
         ]);

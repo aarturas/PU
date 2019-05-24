@@ -89,7 +89,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('user.index')->with('success_message', 'Vartotojai '.$user->name.' '.$user->surname.' was given to Kursai!');
+        return redirect()->route('user.index')->with('success_message', 'User : '.$user->name.' '.$user->surname.' buvo sėkmingai ištrintas is sąrašo!');
     }
 
 }

@@ -8,12 +8,9 @@
 <div class="card">
 <div class="card-header">Nauja skaidrė</div>
 <div class="card-body">
+                                   <form action="{{route('failai.store')}}" method="POST" enctype="multipart/form-data">
 
-      <form action="{{route('failai.store')}}" method="POST" enctype="multipart/form-data">
-
-
-
-         {{--                                1. Renkamės (select'u) paskaitas / kursus                                     --}}
+{{--                                                         1. Renkamės (select'u) paskaitas / kursus                                       --}}
 <div class="form-group">
             <select class="form-control"name="paskaito_id">
                     @foreach (App\Paskaito::all() as $item)
@@ -21,34 +18,27 @@
                     @endforeach
             </select>
 </div>
-
-
-
-
-   {{--                                      2.   Skaidrių pasirinkimas ir įkėlimas???                                      --}}
+{{--                                                         2.   Skaidrių pasirinkimas ir įkėlimas???                                        --}}
 <div class="form-group">
        <label for="name">Skaidrės</label>
        <input type="file" class="form-control-file" name="photo" id="photo">
        <small id="emailHelp" class="form-text text-muted">Prašome įkelti naują skaidrę.</small>
 </div>    
-
  
-  {{--                                       3.  Paskaitos pavadinimas                                                        --}}
+{{--                                                         3.  Paskaitos pavadinimas                                                        --}}
 <div class="form-group">
-  <label for="name">Grupės pavadinimas</label>
-  <input type="text" class="form-control" name="name" id="name" placeholder="Įrašykite naują grupę" value="{{old('name', '')}}">
-  <small id="emailHelp" class="form-text text-muted">Prašom įrašyti paskaitos pavadinimą.</small>
+       <label for="name">Grupės pavadinimas</label>
+       <input type="text" class="form-control" name="name" id="name" placeholder="Įrašykite naują grupę" value="{{old('name', '')}}">
+       <small id="emailHelp" class="form-text text-muted">Prašom įrašyti paskaitos pavadinimą.</small>
 </div>
-
                                  <button type="submit" class="btn btn-primary">Enter</button>
                           @csrf
-      </form>
-
- </div>
- </div>
- </div>
- </div>
- </div>
+                                 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 

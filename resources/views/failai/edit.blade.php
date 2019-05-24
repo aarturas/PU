@@ -24,13 +24,14 @@
 </div>
 
 <div class="form-group">
+{{--                                         foto failu atsisiuntimas - download                                                                             --}}
                         @if($failai->photo)
-       <a href="{{route('failai.download', $failai)}}">
-       <img src="{{asset('img/'.$failai->photo)}}" style="object-fit: contain; height: 100px;">
-                        </a>
+                                <a href="{{route('failai.download', $failai)}}">
+                                <img src="{{asset('img/'.$failai->photo)}}" style="object-fit: contain; height: 100px;">
+                                </a>
                         @endif
 </div>
-                    @csrf
+       @csrf
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
 </div>
