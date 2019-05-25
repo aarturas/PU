@@ -28,10 +28,9 @@ class UserController extends Controller
     {
 
     //  return view('user.edit', ['collection' => Grupe::all(),'User' => $user]);
-    //  return view('user.create', ['user'=> User::all()]);
+        return view('user.create', ['user'=> User::all()]);
     //  return view('user.create',['user'=> $user]);
-
-        return view('user.create');
+    //  return view('user.create');
     }
 
 
@@ -45,13 +44,15 @@ class UserController extends Controller
         $user->surname = $request->surname;
         $user->email = $request->email;
         $user->phone = $request->phone;
-        //         irasome slaptazodzio laukeliui privaloma slaptazodi
+        //                                 įrašome į slaptažodžio 'laukelį' privalomą slaptazodį
         $user->password =  Hash::make($request->password);
-    
 
         $user->save();
 
-        return redirect()->route('user.index');
+    //  return redirect()->route('user.index');
+    //                                             sukūriame "pasirodančią" žinutę, kad 'user'is yra sėkmingai sukurtas
+        return redirect()->route('user.index')->with('success_message', 'User '.$user->name.' '.$user->surname.' buvo sėkmingai įrašyta(s)!');
+
     }
 
 
@@ -72,7 +73,7 @@ class UserController extends Controller
 
 
     
-    public function update(Request $request, Vartotojai $user)
+    public function update(Request $request, User $user)
     {
         $user->tipa = $request->tipa;
         $user->name = $request->name;
@@ -81,7 +82,10 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->save();
 
-        return redirect()->route('user.index');
+        // return redirect()->route('user.index');
+
+        return redirect()->route('user.index')->with('success_message', 'Userį : '.$user->name.' pataisėme!');
+
     }
 
 
@@ -89,7 +93,8 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('user.index')->with('success_message', 'User : '.$user->name.' '.$user->surname.' buvo sėkmingai ištrintas is sąrašo!');
+        return redirect()->route('user.index')->with('success_message', 'User : '.$user->name.' '.$user->surname.' buvo sėkmingai ištrinta(s) is sąrašo!');
+        
     }
 
 }

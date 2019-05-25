@@ -47,7 +47,7 @@ Route::group(['prefix' => 'kursais'], function(){
     Route::get('create', 'PaskaitoController@create')->name('paskaito.create');
     Route::post('store', 'PaskaitoController@store')->name('paskaito.store');
     Route::get('edit/{paskaito}', 'PaskaitoController@edit')->name('paskaito.edit');
-    Route::post('update/{paskaito}', 'PaskaitoController@update')->name('paskaito.update');
+    Route::post('/update/{paskaito}', 'PaskaitoController@update')->name('paskaito.update');
     Route::post('/delete/{paskaito}', 'PaskaitoController@destroy')->name('paskaito.destroy');
     Route::get('show/{paskaito}', 'PaskaitoController@show')->name('paskaito.show');
  });

@@ -45,7 +45,9 @@ class PaskaitoController extends Controller
         $paskaito->aprasas = $request->aprasas;
         $paskaito->save();
 
-        return redirect()->route('paskaito.index');
+        // return redirect()->route('paskaito.index');
+
+        return redirect()->route('paskaito.index')->with('success_message', ' Paskaita :'.$paskaito->pavadinimas.' buvo sėkmingai įrašyta!');
     }
 
 
@@ -55,7 +57,6 @@ class PaskaitoController extends Controller
     public function show(Paskaito $paskaito)
     {
         return view('paskaito.show', ['paskaito' => $paskaito]);
-
     }
 
 
@@ -70,19 +71,20 @@ class PaskaitoController extends Controller
 
 
 
-
     public function update(Request $request, Paskaito $paskaito)
     {
+
         $paskaito->grupe_id = $request->grupe_id;
         // pataiso datos formata - funkcija:strtotime
         $paskaito->data =  date('Y-m-d H:i:s', strtotime($request->data));
-        
-        // $paskaito->data = $request->data;
+    //  $paskaito->data = $request->data;
         $paskaito->pavadinimas = $request->pavadinimas;
         $paskaito->aprasas = $request->aprasas;
         $paskaito->save();
 
-        return redirect()->route('paskaito.index');
+     // return redirect()->route('paskaito.index');
+
+        return redirect()->route('paskaito.index')->with('success_message', 'Paskaitą : '.$paskaito->name.' pataisėme!');
     }
 
 
@@ -100,8 +102,11 @@ class PaskaitoController extends Controller
         //     return redirect()->route('paskaito.index')->with('info_message', 'Cannot delete. Assign these Paskaito(s) to a different paskaito first.');
         // }
 
+        // $paskaito->delete();
+        // return redirect()->route('paskaito.index');
+
         $paskaito->delete();
-        return redirect()->route('paskaito.index');
+        return redirect()->route('paskaito.index')->with('success_message', 'Paskaita : '.$paskaito->name.' buvo sėkmingai ištrinta iš sąrašo!');
 
 
     }

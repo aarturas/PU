@@ -44,7 +44,9 @@ class KursaiController extends Controller
         $kursai->name = $request->name;
         $kursai->save();
 
-        return redirect()->route('kursai.index');
+    //  return redirect()->route('kursai.index');
+
+        return redirect()->route('kursai.index')->with('success_message', ' Paskaita '.$kursai->name.' buvo sėkmingai įrašyta!');
     }
 
 
@@ -59,13 +61,11 @@ class KursaiController extends Controller
 
 
 
-
     
     public function edit(Kursai $kursai)
     {
         return view('kursai.edit', ['collection' => Kursai::all(),'kursai' => $kursai]);
     }
-
 
 
 
@@ -84,8 +84,6 @@ class KursaiController extends Controller
 
 
 
-
-
     
     public function destroy(Kursai $kursai)
 
@@ -94,6 +92,9 @@ class KursaiController extends Controller
         {
            $kursai->delete();
         }
-       return redirect()->route('kursai.index');
+//  return redirect()->route('kursai.index');
+
+    $kursai->delete();
+    return redirect()->route('kursai.index')->with('success_message', 'Paskaita : '.$kursai->name.' buvo sėkmingai ištrinta iš sąrašo!');
     }
 }

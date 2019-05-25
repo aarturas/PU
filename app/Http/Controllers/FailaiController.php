@@ -14,8 +14,6 @@ use Illuminate\Http\Request;
 class FailaiController extends Controller
 {
 
-
-
     public function index()
     {
         return view('failai.index', ['collection' => Failai::all()]);
@@ -42,16 +40,17 @@ class FailaiController extends Controller
     public function store(Request $request)
     {
 
-        
+    //                                 Failų  controlleryje į "store" įkeliame photo failą
         $file = $request->file('photo') ?? false;
         if ($file) {
             $photo = basename($file->getClientOriginalName());    // failo vardas
-            $file->move(public_path('/img'), $photo);  // eilutes numetimas i ta vieta
+            $file->move(public_path('/img'), $photo);             // eilutės 'numetimas' i tą vietą
         }
 
 
         $failai = new Failai;
         $failai->paskaito_id = $request->paskaito_id;
+    //                  $photo, neprisimenu kodėl yra be $request'o
         $failai->file = $photo;
         $failai->name = $request->name;
         $failai->save();
@@ -90,7 +89,7 @@ class FailaiController extends Controller
         $file = $request->file('photo') ?? false;
         if ($file) {
             $photo = basename($file->getClientOriginalName());    // failo vardas
-            $file->move(public_path('/img'), $photo);  // eilutes numetimas i ta vieta
+            $file->move(public_path('/img'), $photo);             // eilutes numetimas i ta vieta
         }
 
         // $failai->paskaito_id = $request->paskaito_id;

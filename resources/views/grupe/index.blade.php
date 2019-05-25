@@ -9,7 +9,6 @@
 <div class="card-body">
 <div class="list-group">
                                               @foreach ($collection as $grupe)
-
 <div class="row" style="margin-bottom: 10px;">
 
 <div class="col-md-9">
@@ -17,12 +16,12 @@
 </div>
 
     <a href="{{route('grupe.edit', $grupe)}}" {{$grupe->name}}  {{$grupe->started_at}} {{$grupe->finished_at}}>
-                <button type="submit" class="btn btn-primary">Redaguoti</button>
-                        </a>
+                                               <button type="submit" class="btn btn-primary">Redaguoti</button>
+    </a>
 
     <form action="{{route('grupe.destroy', $grupe)}}" method="POST">
             @csrf
-                <button type="submit" class="btn btn-danger">Trinti</button>
+                                               <button type="submit" class="btn btn-danger">Trinti</button>
     </form>
 
 </div>

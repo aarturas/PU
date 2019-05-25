@@ -10,7 +10,7 @@
 <div class="card-header">Naujo user'io įrašymas</div>
 <div class="card-body">
                     
-                    <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data"> 
+                    <form action="{{route('user.store')}}"> 
 
 {{--                                            1. Userio vardas                                                               --}}
 <div class="form-group">

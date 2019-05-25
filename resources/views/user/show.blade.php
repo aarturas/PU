@@ -9,34 +9,30 @@
 <div class="card-header" style="color:blue">User {{$user->name}} informacija :</div>
 <div class="card-body">
 <div class="list-group">
-
-{{--             Nuoroda i kelia, jeigu pasirenkame 'edit', nukreipiami i 'user.edit' kelia     --}}
+{{--                             SHOW kortelė su informacija apie USERi                              --}}
+{{--             Nuoroda i kelia, jeigu pasirenkame 'edit', nukreipiami i 'user.edit' kelia          --}}
         <div><a href="{{route('user.edit', $user)}}">Editas</a></div>
 
 
-        {{--                        Tipas:    Dėstytojas ar studentas                             --}}
+{{--                                1.  Tipas:    Dėstytojas-1 arba studentas-2                      --}}
 <div><b> User tipas :</b> {{$user->tipa}} </div>
-        
 
-{{--                           Dėstytojo / studento vardas                              --}}
+{{--                                2.  Dėstytojo / studento vardas                                  --}}
 <div><b> User vardas :</b> {{$user->name}} </div>
 
-{{--                          Destytojo / studento pavarde                                --}}
-        <div><b>User pavarde :</b> {{$user->surname}}</div>
+{{--                                3.  Destytojo / studento pavardė                                 --}}
+<div><b>User pavarde :</b> {{$user->surname}}</div>
 <div>
-
-
-        {{--                           Dėstytojo / studento vardas                              --}}
+{{--                                4.  Dėstytojo / studento el.paštas                               --}}
 <div><b> User el.paštas :</b> {{$user->email}} </div>
 
-
-{{--                           Dėstytojo / studento vardas                              --}}
+{{--                                5.  Dėstytojo / studento telefonas                               --}}
 <div><b> User telefonas :</b> {{$user->phone}} </div>
 
-{{--                           Pastabos apie kazka...                            --}}
-        <h3>Notices:</h3>
+{{--                                6.  Pastabos apie kažką...                                       --}}
+             <h3>Notices:</h3>
 <div>
-{{--                           Turi buti šauktukai, kitaip nerodys pastabų       --}}
+{{--                                7.  Turi buti šauktukai, kitaip nerodys pastabų                  --}}
             {!!$user->aprasas!!}
                     
 </div>  

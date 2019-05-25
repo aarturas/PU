@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
                           <h6 style="padding-left:40%">index.blade.kursai</h6>
-                          <h3 style="padding-left:30%">Paskaitų sąrašas ir redagavimas</h3>
+                          <h3 style="padding-left:30%">Kursų sąrašas ir redagavimas</h3>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="card">
-<div class="card-header">Paskaitų/kursų sąrašas</div>
+<div class="card-header">Kursų sąrašas</div>
 <div class="card-body">
 <div class="list-group">
                            @foreach ($collection as $kursai)

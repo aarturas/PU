@@ -44,7 +44,6 @@ class User extends Authenticatable
 
 
 
-
 // class User extends Model
 
     public function UserKursai()

@@ -11,4 +11,8 @@ class Failai extends Model
     return $this->belongsTo('App\Paskaito', 'paskaito_id', 'id');
     }
 
+    
+
+
+
 }
