@@ -19,5 +19,4 @@ class Kursai extends Model
         return $this->hasMany('App\Grupe', 'kursai_id', 'id');
     }
 
-
 }

@@ -44,13 +44,13 @@ class UserController extends Controller
         $user->surname = $request->surname;
         $user->email = $request->email;
         $user->phone = $request->phone;
-        //                                 įrašome į slaptažodžio 'laukelį' privalomą slaptazodį
+//                                                į slaptažodžio 'laukelį' įrašome, kad slaptažodis yra privalomas
         $user->password =  Hash::make($request->password);
 
         $user->save();
 
-    //  return redirect()->route('user.index');
-    //                                             sukūriame "pasirodančią" žinutę, kad 'user'is yra sėkmingai sukurtas
+//      return redirect()->route('user.index');
+//                                             sukūriame "pasirodančią" žinutę, kad 'user'is yra sėkmingai sukurtas
         return redirect()->route('user.index')->with('success_message', 'User '.$user->name.' '.$user->surname.' buvo sėkmingai įrašyta(s)!');
 
     }

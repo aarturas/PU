@@ -10,10 +10,6 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-
-
-
-
     /**
      * The attributes that are mass assignable.
      *
@@ -52,7 +48,6 @@ class User extends Authenticatable
     }
 
 
-    //               bandau 'kazka daryti' su user , kad matytu browseryje ("undefined variable:user")
     public function UserGrupe()
     {
         return $this->belongsTo('App\User', 'user_id', 'id');

@@ -90,10 +90,8 @@ class GrupeController extends Controller
         $grupe->finished_at =  date('Y-m-d H:i:s', strtotime(str_replace('.', '-', $request->finished_at)));
         $grupe->save();
 
-        // return redirect()->route('grupe.index');
-
+     // return redirect()->route('grupe.index');
         return redirect()->route('grupe.index')->with('success_message', 'Grupę : '.$grupe->name.' pataisėme!');
-
     }
     
 
@@ -102,8 +100,8 @@ class GrupeController extends Controller
 
     public function destroy(Grupe $grupe)
     {
-        // $grupe->delete();
-        // return redirect()->route('grupe.index');
+    //  $grupe->delete();
+    //  return redirect()->route('grupe.index');
 
         $grupe->delete();
         return redirect()->route('grupe.index')->with('success_message', 'Grupė : '.$grupe->name.' buvo sėkmingai ištrinta iš sąrašo!');

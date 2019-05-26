@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
-                                  <h4 style="padding-left:30%">edit.blade.failai</h4>
-                                  <h3 style="padding-left:20%">Skaidrių redagavimas</h3>
+                     <h6 style="padding-left:45%">edit.blade.failai</h6>
+                     <h3 style="padding-left:35%">Skaidrių redagavimas</h3>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="card">
-<div class="card-header">Edit {{$failai->name}}</div>
+<div class="card-header"> Redaguoti : {{$failai->name}}</div>
 <div class="card-body">
                     
                      <form action="{{route('failai.update', $failai)}}" method="POST" enctype="multipart/form-data">  
@@ -25,11 +25,11 @@
 
 <div class="form-group">
 {{--                                         foto failu atsisiuntimas - download                                                                             --}}
-                        @if($failai->photo)
-                                <a href="{{route('failai.download', $failai)}}">
-                                <img src="{{asset('img/'.$failai->photo)}}" style="object-fit: contain; height: 100px;">
-                                </a>
-                        @endif
+              @if($failai->photo)
+                     <a href="{{route('failai.download', $failai)}}">
+                     <img src="{{asset('img/'.$failai->photo)}}" style="object-fit: contain; height: 100px;">
+                     </a>
+              @endif
 </div>
 
        @csrf

@@ -8,9 +8,11 @@
 <div class="card">
 <div class="card-header">Nauja skaidrė</div>
 <div class="card-body">
+
+{{--               ------   Naujos skaidrės-failo kūrimas   ------                                                       --}}
                                    <form action="{{route('failai.store')}}" method="POST" enctype="multipart/form-data">
 
-{{--                                                         1. Renkamės (select'u) paskaitas / kursus                                       --}}
+{{--                                                         1. Renkamės (select'u) paskaitas / kursus is sąrašo                                      --}}
 <div class="form-group">
             <select class="form-control"name="paskaito_id">
                     @foreach (App\Paskaito::all() as $item)
@@ -31,7 +33,7 @@
        <input type="text" class="form-control" name="name" id="name" placeholder="Įrašykite naują grupę" value="{{old('name', '')}}">
        <small id="emailHelp" class="form-text text-muted">Prašom įrašyti paskaitos pavadinimą.</small>
 </div>
-                                 <button type="submit" class="btn btn-primary">Enter</button>
+                                 <button type="submit" class="btn btn-primary">Įrašyti</button>
                           @csrf
                                  </form>
 </div>

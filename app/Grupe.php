@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Grupe extends Model
 {
+    
     public function GrupeKursai()
     {
         return $this->belongsTo('App\Kursai', 'kursai_id', 'id');

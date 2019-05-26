@@ -46,6 +46,7 @@ class FailaiController extends Controller
     public function store(Request $request)
     {
 
+//                                    ------------   validatorius - STORE   ---------
 
         $validator = Validator::make($request->all(), 
         [
@@ -64,24 +65,23 @@ class FailaiController extends Controller
 
 
 
-    //                                 Failų  controlleryje į "store" įkeliame photo failą
+    //                                            Failų  controlleryje į "store" įkeliame photo failą
         $file = $request->file('photo') ?? false;
         if ($file) {
-            $photo = basename($file->getClientOriginalName());    // failo vardas
+            $photo = basename($file->getClientOriginalName());    // failo vardas  <<basename>>--yra laravelio konstrukcija
             $file->move(public_path('/img'), $photo);             // eilutės 'numetimas' i tą vietą
         }
 
 
         $failai = new Failai;
         $failai->paskaito_id = $request->paskaito_id;
-    //                  $photo, neprisimenu kodėl yra be $request'o
+    //                  $photo, - neprisimenu kodėl yra be $request'o
         $failai->file = $photo;
         $failai->name = $request->name;
         $failai->save();
 
-        // return redirect()->route('failai.index');
+    //  return redirect()->route('failai.index');
         return redirect()->route('failai.index')->with('success_message', ' Failai: '.$failai->name.' buvo sėkmingai įkelti!');
-
     }
 
 
@@ -104,7 +104,6 @@ class FailaiController extends Controller
     public function edit(Failai $failai)
     {
                 return view('failai.edit', ['failai' => $failai]);
-
     }
 
 
@@ -115,11 +114,12 @@ class FailaiController extends Controller
     public function update(Request $request, Failai $failai)
     {
 
-//                                                    validatorius
-
+//                                        ------------   validatorius - UPDATE   ------------
+                
         $validator = Validator::make($request->all(), 
         [
             'name' => ['required', 'min:3', 'max:64'],
+            'photo' => ['sometimes','required','max:20000','mimes:jpg,png,jpeg']
         ],
         [
             'name.required' => 'Name is required',
@@ -127,8 +127,10 @@ class FailaiController extends Controller
         );
         if ($validator->fails()) {
             $request->flash();
-            return redirect()->route('failai.edit')->withErrors($validator);
+
+            return redirect()->route('failai.create')->withErrors($validator);
         }
+       
 
         //                                          photo ikelimas
         $file = $request->file('photo') ?? false;
@@ -139,11 +141,10 @@ class FailaiController extends Controller
 
         
         $failai->name = $request->name;
-        $failai->surname = $request->surname;
+        // $failai->surname = $request->surname;
             if ($file) {
         $failai->photo = $photo;
         }
-
 
 
         $file = $request->file('photo') ?? false;
@@ -152,17 +153,19 @@ class FailaiController extends Controller
             $file->move(public_path('/img'), $photo);             // eilutes numetimas i ta vieta
         }
 
-        // $failai->paskaito_id = $request->paskaito_id;
+
+        //                                     $failai->paskaito_id = $request->paskaito_id;
         $failai->file = $photo;
         $failai->name = $request->name;
         $failai->save();
 
-        // return redirect()->route('failai.index');
+    //  return redirect()->route('failai.index');
         return redirect()->route('failai.index')->with('success_message', 'Failo : '.$failai->name.' informaciją sėkmingai atnaujinome!');
     }
 
 
-// ---------------------------------------------- DELETE --------------------------------------------------------------
+
+// ---------------------------------------------- DELETE ---------------------------------------------------------------------------------
 
 
 
