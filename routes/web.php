@@ -59,6 +59,9 @@ Route::group(['prefix' => 'kursais'], function(){
     Route::get('create', 'FailaiController@create')->name('failai.create');
     Route::post('store', 'FailaiController@store')->name('failai.store');
     Route::get('edit/{failai}', 'FailaiController@edit')->name('failai.edit');
+    
+    Route::get('/download/{failai}', 'FailaiController@download')->name('failai.download');
+
     Route::post('update/{failai}', 'FailaiController@update')->name('failai.update');
     Route::post('/delete/{failai}', 'FailaiController@destroy')->name('failai.destroy');
     Route::get('show/{failai}', 'FailaiController@show')->name('failai.show');

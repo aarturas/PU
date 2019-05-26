@@ -15,7 +15,7 @@
 
 
 {{--                                1.  Tipas:    Dėstytojas-1 arba studentas-2                      --}}
-<div><b> User tipas :</b> {{$user->tipa}} </div>
+<div><b> User tipas: id :</b> {{$user->tipa}} {{$user->name}}</div>
 
 {{--                                2.  Dėstytojo / studento vardas                                  --}}
 <div><b> User vardas :</b> {{$user->name}} </div>
@@ -29,13 +29,9 @@
 {{--                                5.  Dėstytojo / studento telefonas                               --}}
 <div><b> User telefonas :</b> {{$user->phone}} </div>
 
-{{--                                6.  Pastabos apie kažką...                                       --}}
-             <h3>Notices:</h3>
-<div>
-{{--                                7.  Turi buti šauktukai, kitaip nerodys pastabų                  --}}
-            {!!$user->aprasas!!}
+
                     
-</div>  
+ 
 </div>
 </div>
 </div>

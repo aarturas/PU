@@ -31,6 +31,7 @@
                                 </a>
                         @endif
 </div>
+
        @csrf
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>

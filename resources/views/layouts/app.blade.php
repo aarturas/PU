@@ -98,7 +98,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('user.index') }}">Visi user</a>
-                                <a class="dropdown-item" href="{{ route('user.create') }}">Naujas useris</a>
+                                <a class="dropdown-item" href="{{ route('user.create') }}">Naujas user</a>
                             </div>
                         </li>
 
@@ -143,46 +143,49 @@
         <main class="py-4">
 
 
-               {{--                 cia, rodos reikalinga summernote'ui --}}
+               {{--                 cia, rodos reikalinga summernote'ui, NE validatoriui, rodos --}}
 
-               <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-9">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-9">
                             @if ($errors->any())
-                            <div class="alert">
+<div class="alert">
                                 <ul class="list-group">
+
                                     @foreach ($errors->all() as $error)
                                         <li class="list-group-item list-group-item-danger">{{ $error }}</li>
                                     @endforeach
+
                                 </ul>
                             </div>
                             @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-9">
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-9">
                             @if(session()->has('success_message'))
                                 <div class="alert alert-success" role="alert">
                                     {{session()->get('success_message')}}
                                 </div>
                             @endif
                             
+                     {{-- sitas kodas apraso validatoriaus klaida --}}
+
                             @if(session()->has('info_message'))
                                 <div class="alert alert-info" role="alert">
                                     {{session()->get('info_message')}}
                                 </div>
                             @endif
-                        </div>
-                    </div>
-                </div>
 
-
+</div>
+</div>
+</div>
 
 
             @yield('content')
         </main>
-    </div>
+</div>
 </body>
 </html>

@@ -13,14 +13,18 @@
 {{--             Nuoroda i kelią, jeigu pasirenkame 'edit', nukreipiami i 'failai.edit' kelia         --}}
         <div><a href="{{route('failai.edit', $failai)}}">Redaguoti</a></div>
 
-{{--                         1.  Dėstytojo Vardas (iš modelio 'failai.php') :                         --}}
-{{--                            kortelėje rodys dėstytojo vardą :                                    --}}
+{{--                         1.  Failo info (iš modelio 'failai.php') :                         --}}
+   
+{{--               Paskaitos id:                                                      --}}
+<div><b> Paskaitos id :</b> {{$failai->paskaito_id}} </div>
 
-        <div><b> Paskaitos pavadinimas :</b> {{$failai->FailaiPaskaito->pavadinimas}} </div>
+{{--               Failas                                                             --}}
+<div><b> Failas :</b> {{$failai->file}} </div>
 
-        <div><b> Paskaitos id :</b> {{$failai->paskaito_id}} </div>
+{{--               Failo ar skaidrės pavadinimas                                       --}}
+<div><b> Failo-skaidrės pavadinimas :</b> {{$failai->FailaiPaskaito->pavadinimas}} </div>
 
-        <div><b> Failas :</b> {{$failai->file}} </div>
+
 
 
 

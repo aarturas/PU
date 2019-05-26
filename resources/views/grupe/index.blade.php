@@ -10,8 +10,8 @@
 <div class="list-group">
                                               @foreach ($collection as $grupe)
 <div class="row" style="margin-bottom: 10px;">
-
 <div class="col-md-9">
+    
     <a href="{{route('grupe.show', $grupe)}}" class="list-group-item list-group-item-action list-group-item-primary">{{$grupe->name}} prasidejo: {{$grupe->started_at}} pabaiga : {{$grupe->finished_at}} </a>
 </div>
 

@@ -84,7 +84,7 @@ class UserController extends Controller
 
         // return redirect()->route('user.index');
 
-        return redirect()->route('user.index')->with('success_message', 'Userį : '.$user->name.' pataisėme!');
+        return redirect()->route('user.index')->with('success_message', 'Userį : '.$user->name.' informaciją atnaujinome!');
 
     }
 

@@ -84,7 +84,7 @@ class PaskaitoController extends Controller
 
      // return redirect()->route('paskaito.index');
 
-        return redirect()->route('paskaito.index')->with('success_message', 'Paskaitą : '.$paskaito->name.' pataisėme!');
+        return redirect()->route('paskaito.index')->with('success_message', 'Paskaitos '.$paskaito->name.' informaciją atnaujinome!');
     }
 
 
