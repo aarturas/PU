@@ -66,8 +66,8 @@
                                 Kursai <span class="caret"></span>
                             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('kursai.index') }}">Visi kursai </a>
-                                <a class="dropdown-item" href="{{ route('kursai.create') }}">Naujas kursas </a>
+                                <a class="dropdown-item" href="{{ route('kursai.index') }}"> 1. Visi kursai </a>
+                                <a class="dropdown-item" href="{{ route('kursai.create') }}">2. Naujas kursas </a>
 </div>
                         </li>
 
@@ -76,8 +76,8 @@
                                 Grupes <span class="caret"></span>
                             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('grupe.index') }}">Visos grupes </a>
-                                <a class="dropdown-item" href="{{ route('grupe.create') }}">Nauja grupe</a>
+                                <a class="dropdown-item" href="{{ route('grupe.index') }}"> 1. Visos grupes </a>
+                                <a class="dropdown-item" href="{{ route('grupe.create') }}"> 2. Nauja grupe</a>
 </div>
                         </li>
 
@@ -87,8 +87,8 @@
                                 Paskaitos <span class="caret"></span>
                             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('paskaito.index') }}">Visos paskaitos</a>
-                                <a class="dropdown-item" href="{{ route('paskaito.create') }}">Nauja paskaita</a>
+                                <a class="dropdown-item" href="{{ route('paskaito.index') }}"> 1. Visos paskaitos</a>
+                                <a class="dropdown-item" href="{{ route('paskaito.create') }}"> 2. Nauja paskaita</a>
 </div>
                         </li>
 
@@ -98,8 +98,8 @@
                                 User <span class="caret"></span>
                             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('user.index') }}">Visi user</a>
-                                <a class="dropdown-item" href="{{ route('user.create') }}">Naujas user</a>
+                                <a class="dropdown-item" href="{{ route('user.index') }}"> 1. Visi user</a>
+                                <a class="dropdown-item" href="{{ route('user.create') }}"> 2. Naujas user</a>
 {{-- </div>
 
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -120,8 +120,8 @@
                                 Failai <span class="caret"></span>
                             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('failai.index') }}">Visi failai</a>
-                                <a class="dropdown-item" href="{{ route('failai.create') }}">Naujas failas</a>
+                                <a class="dropdown-item" href="{{ route('failai.index') }}"> 1. Visi failai</a>
+                                <a class="dropdown-item" href="{{ route('failai.create') }}"> 2. Naujas failas</a>
 </div>
                         </li>
 

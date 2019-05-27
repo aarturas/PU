@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-                     <h6 style="padding-left:45%">edit.blade.failai</h6>
-                     <h3 style="padding-left:35%">Skaidrių redagavimas</h3>
+                     <h6 class="text-center">edit.blade.failai</h6>
+                     <h3  class="text-center">Skaidrių redagavimas</h3>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">
@@ -12,7 +12,7 @@
 
 <div class="form-group">
        <label for="name">File pavadinimas</label>
-       <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="File name" value="{{old('name', $failai->name)}}">
+       <input type="text" class="form-control" name="name"  placeholder="File name" value="{{old('name', $failai->name)}}">
        <small id="emailHelp" class="form-text text-muted">Please, enter new failai name. Max lenght 64 symbols.</small>
 </div>
                     

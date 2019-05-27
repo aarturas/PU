@@ -47,20 +47,22 @@ class FailaiController extends Controller
     {
 
 //                                    ------------   validatorius - STORE   ---------
+$validator = Validator::make($request->all(), 
+[
+    // 'name' => ['required', 'min:3', 'max:64'],
+    'photo' => ['sometimes','required','max:20000','mimes:jpg,png,jpeg']
+],
+[
+    'name.required' => 'Name is required',
+]
+);
+if ($validator->fails()) {
+    $request->flash();
 
-        $validator = Validator::make($request->all(), 
-        [
-            'name' => ['required', 'min:3', 'max:64'],
-            'photo' => ['sometimes','required','max:20000','mimes:jpg,png,jpeg']
-        ],
-        [
-            'name.required' => 'Name is required',
-        ]
-        );
-        if ($validator->fails()) {
-            $request->flash();
-            return redirect()->route('failai.create')->withErrors($validator);
-        }
+    return redirect()->route('failai.create')->withErrors($validator);
+}
+
+
 
 
 
@@ -118,7 +120,7 @@ class FailaiController extends Controller
                 
         $validator = Validator::make($request->all(), 
         [
-            'name' => ['required', 'min:3', 'max:64'],
+            // 'name' => ['required', 'min:3', 'max:64'],
             'photo' => ['sometimes','required','max:20000','mimes:jpg,png,jpeg']
         ],
         [
@@ -128,23 +130,15 @@ class FailaiController extends Controller
         if ($validator->fails()) {
             $request->flash();
 
-            return redirect()->route('failai.create')->withErrors($validator);
+            return redirect()->route('failai.edit',[$failai])->withErrors($validator);
         }
        
 
         //                                          photo ikelimas
-        $file = $request->file('photo') ?? false;
-            if ($file) {
-        $photo = basename($file->getClientOriginalName());          // failo pavadinimas
-        $file->move(public_path('/img'), $photo);
-        }
+     
 
         
-        $failai->name = $request->name;
-        // $failai->surname = $request->surname;
-            if ($file) {
-        $failai->photo = $photo;
-        }
+       
 
 
         $file = $request->file('photo') ?? false;
