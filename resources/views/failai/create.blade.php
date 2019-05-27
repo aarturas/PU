@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-                          <h6 style="padding-left:40%">create.blade.failai</h6>
-                          <h3 style="padding-left:30%">Naujų skaidrių įrašymas</h3>
+                          <h6 class="text-center">create.blade.failai</h6>
+                          <h3 class="text-center">Naujų skaidrių įrašymas</h3>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">

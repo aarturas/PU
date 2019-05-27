@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-                          <h6 style="padding-left:45%">show.blade.user</h6>
-                          <h4 style="padding-left:35%">User.Informacijos pateikimas.Kortelėje.</h4>
+                    <h6 class="text-center">show.blade.user</h6>
+                    <h4 class="text-center">User.Informacijos pateikimas.Kortelėje.</h4>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">

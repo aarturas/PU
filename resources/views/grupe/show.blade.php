@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-                          <h6 style="padding-left:40%">show.blade.grupe</h6>
-                          <h4 style="padding-left:20%">Informacijos pateikimas 'grupės'. Kortelėje.</h4>
+                        <h6 class="text-center">show.blade.grupe</h6>
+                        <h4 class="text-center">Informacijos pateikimas 'grupės'. Kortelėje.</h4>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">
@@ -12,7 +12,7 @@
 
 {{--             Nuoroda i kelią, jeigu pasirenkame 'edit', nukreipiami i 'grupe.edit' kelią         --}}
         <div><a href="{{route('grupe.edit', $grupe)}}">Editas</a></div>
-        
+
 
 {{--                                 1.  Dėstytojo Vardas (iš modelio 'grupe.php') :                 --}}
 {{--                            kortelėje rodys dėstytojo vardą :                                    --}}
