@@ -15,7 +15,7 @@
 
 
 {{--                                1.  Tipas:    Dėstytojas-1 arba studentas-2                      --}}
-<div><b> User tipas: id :</b> {{$user->tipa}} {{$user->name}}</div>
+<div><b> User tipas: id :</b> {{$user->tipa}}</div>
 
 {{--                                2.  Dėstytojo / studento vardas                                  --}}
 <div><b> User vardas :</b> {{$user->name}} </div>
