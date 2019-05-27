@@ -27,9 +27,9 @@
 
 </head>
 <body>
-    <div id="app">
+<div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+<div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -37,11 +37,12 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -60,46 +61,57 @@
 
 
 
-
-
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Kursai <span class="caret"></span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('kursai.index') }}">Visi kursai </a>
                                 <a class="dropdown-item" href="{{ route('kursai.create') }}">Naujas kursas </a>
-                            </div>
+</div>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Grupes <span class="caret"></span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('grupe.index') }}">Visos grupes </a>
                                 <a class="dropdown-item" href="{{ route('grupe.create') }}">Nauja grupe</a>
-                            </div>
+</div>
                         </li>
+
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Paskaitos <span class="caret"></span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('paskaito.index') }}">Visos paskaitos</a>
                                 <a class="dropdown-item" href="{{ route('paskaito.create') }}">Nauja paskaita</a>
-                            </div>
+</div>
                         </li>
+
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 User <span class="caret"></span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('user.index') }}">Visi user</a>
                                 <a class="dropdown-item" href="{{ route('user.create') }}">Naujas user</a>
-                            </div>
+{{-- </div>
+
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{{ route('destytoja.index') }}">Visi destytojai</a>
+        <a class="dropdown-item" href="{{ route('destytoja.create') }}">Naujas destytojas</a>
+</div>
+
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{{ route('studenta.index') }}">Visi studentai</a>
+        <a class="dropdown-item" href="{{ route('studenta.create') }}">Naujas studentas</a>
+</div> --}}
+
                         </li>
 
 
@@ -107,13 +119,11 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Failai <span class="caret"></span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('failai.index') }}">Visi failai</a>
                                 <a class="dropdown-item" href="{{ route('failai.create') }}">Naujas failas</a>
-                            </div>
+</div>
                         </li>
-
-
 
 
 
@@ -122,7 +132,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -132,18 +142,18 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
+</div>
                             </li>
                         @endguest
                     </ul>
-                </div>
-            </div>
+</div>
+</div>
         </nav>
 
         <main class="py-4">
 
 
-               {{--                 cia, rodos reikalinga summernote'ui, NE validatoriui, rodos --}}
+ {{--                                      validatoriui                           --}}
 
 <div class="container">
 <div class="row justify-content-center">

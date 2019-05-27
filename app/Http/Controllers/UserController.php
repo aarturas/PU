@@ -26,9 +26,9 @@ class UserController extends Controller
 
     public function create()
     {
+        return view('user.create', ['user'=> User::all()]);
 
     //  return view('user.edit', ['collection' => Grupe::all(),'User' => $user]);
-        return view('user.create', ['user'=> User::all()]);
     //  return view('user.create',['user'=> $user]);
     //  return view('user.create');
     }
@@ -50,7 +50,7 @@ class UserController extends Controller
         $user->save();
 
 //      return redirect()->route('user.index');
-//                                             sukūriame "pasirodančią" žinutę, kad 'user'is yra sėkmingai sukurtas
+//                                             sukūriame "pasirodančią" žinutę, kad /'user'is/ yra sėkmingai sukurtas
         return redirect()->route('user.index')->with('success_message', 'User '.$user->name.' '.$user->surname.' buvo sėkmingai įrašyta(s)!');
 
     }

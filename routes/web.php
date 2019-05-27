@@ -76,3 +76,26 @@ Route::group(['prefix' => 'kursais'], function(){
    Route::post('/delete/{user}', 'UserController@destroy')->name('user.destroy');
    Route::get('show/{user}', 'UserController@show')->name('user.show');
 });
+
+
+// Route::group(['prefix' => destytojas'], function(){
+//    Route::get('', 'DestytojaController@index')->name('destytoja.index');
+//    Route::get('create', 'DestytojaController@create')->name('destytoja.create');
+//    Route::post('store', 'DestytojaController@store')->name('destytoja.store');
+//    Route::get('edit/{destytoja}', 'DestytojaController@edit')->name('destytoja.edit');
+//    Route::post('update/{destytoja}', 'DestytojaController@update')->name('destytoja.update');
+//    Route::post('/delete/destytoja}', 'DestytojaController@destroy')->name('destytoja.destroy');
+//    Route::get('show/{destytoja}', 'DestytojaController@show')->name('destytoja.show');
+// });
+
+
+
+// Route::group(['prefix' => studentas'], function(){
+//    Route::get('', 'StudentaController@index')->name('studenta.index');
+//    Route::get('create', 'StudentaController@create')->name('studenta.create');
+//    Route::post('store', 'StudentaController@store')->name('studenta.store');
+//    Route::get('edit/{studenta}', 'StudentaController@edit')->name('studenta.edit');
+//    Route::post('update/{studenta}', 'StudentaController@update')->name('studenta.update');
+//    Route::post('/delete/{studenta}', 'StudentaController@destroy')->name('studenta.destroy');
+//    Route::get('show/{studenta}', 'StudentaController@show')->name('studenta.show');
+// });

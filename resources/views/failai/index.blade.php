@@ -13,14 +13,15 @@
 <div class="row" style="margin-bottom: 10px;">
 <div class="col-md-5">
 <div class="col-md-3">
- {{--                                      photo/skaidres ikelimas: rodo nuotraukas                                                                                     --}}
+ {{--                                      photo/skaidrės įkėlimas: rodo nuotraukas                                                                                     --}}
                        <img src="{{asset('img/'.$failai->file)}}" style="object-fit: contain; height: 100px;"> 
 </div>
 </div>
 </div>
 
 <div class="row" style="margin-bottom: 10px;">
-<div class="col-md-9">
+{{--                    sumažina failo pavadinimo langelio ilgį (6)                                                            --}}
+<div class="col-md-6">   
         <a href="{{route('failai.show', $failai)}}" class="list-group-item list-group-item-action list-group-item-primary" enctype="multipart/form-data">{{$failai->name}}</a>
 </div>
         <a href="{{route('failai.edit', $failai)}}" {{$failai->file}}>
@@ -31,12 +32,12 @@
         </form>
            
 <div class="form-group">
-{{--                                         foto failu redagavimas                                                                                                     --}}
-                        @if($failai->photo)
-                                    <a href="{{route('failai.edit', $failai)}}">
-                                    <img src="{{asset('img/'.$failai->photo)}}" style="object-fit: contain; height: 100px;">
-                                    </a>
-                        @endif
+{{--                                         foto failų redagavimas                                                                                                     --}}
+                @if($failai->photo)
+                        <a href="{{route('failai.edit', $failai)}}">
+                        <img src="{{asset('img/'.$failai->photo)}}" style="object-fit: contain; height: 100px;">
+                        </a>
+                @endif
 </div>
 </div>
                                            @endforeach

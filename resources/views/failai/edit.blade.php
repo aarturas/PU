@@ -8,7 +8,6 @@
 <div class="card">
 <div class="card-header"> Redaguoti : {{$failai->name}}</div>
 <div class="card-body">
-                    
                      <form action="{{route('failai.update', $failai)}}" method="POST" enctype="multipart/form-data">  
 
 <div class="form-group">
@@ -33,7 +32,7 @@
 </div>
 
        @csrf
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">Atnaujinti</button>
                 </form>
 </div>
 </div>

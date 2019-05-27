@@ -10,21 +10,21 @@
 <div class="card-body">
 <div class="list-group">
 
-{{--             Nuoroda i kelia, jeigu pasirenkame 'edit', nukreipiami i 'paskaito.edit' kelia     --}}
+{{--             Nuoroda i kelią, jeigu pasirenkame 'edit', nukreipiami i 'paskaito.edit' kelią     --}}
         <div><a href="{{route('paskaito.edit', $paskaito)}}">Edit</a></div>
 
-{{--                                 Grupes-paskaitos pavadinimas                                   --}}
+{{--                                 Grupės-paskaitos pavadinimas                                   --}}
 {{--    <div><b>Kursu id :</b> {{$paskaito->kursai_id}}</div>                                       --}}
-        <div><b> Grupės pavadinimas :</b> {{$paskaito->pavadinimas}} </div>
+        <div><b> Grupės pavadinimas : </b> {{$paskaito->pavadinimas}} </div>
 
 {{--                                 Paskaitos data - Data :                                        --}}
         <div><b> Data :</b> {{$paskaito->data}} </div>
 <div>
-{{--                           Pastabos apie kazka...                                               --}}
-        <h3><b>Aprašas: </b></h3>
+{{--                           Pastabos apie kažką...                                               --}}
+        <h3><b> Aprašas: </b></h3>
 <div>
-{{--                           Turi buti 'šauktukai', kitaip nerodys pastabų                        --}}
-            {!!$paskaito->aprasas!!}
+{{--                           Turi būti 'šauktukai', kitaip nerodys pastabų                        --}}
+        {!!$paskaito->aprasas!!}
 </div>  
 </div>
 </div>

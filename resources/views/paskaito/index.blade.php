@@ -13,7 +13,7 @@
 <div class="row" style="margin-bottom: 10px;">
 <div class="col-md-9">
 
-   {{--                                               1.  Pasirenkame, kad rodytų 'grupes_id', ir kurso 'pavadinimą'                                                                      --}}
+   {{--                                               1.  Pasirenkame, kad rodytų 'grupes_id', ir kurso 'pavadinimą'                                                                                  --}}
 <a href="{{route('paskaito.show', $paskaito)}}" class="list-group-item list-group-item-action list-group-item-primary">{{$paskaito->grupe_id}} Kursas : {{$paskaito->pavadinimas}} {{$paskaito->data}}</a>
 </div>
 <div class="col-md-3" style="display:flex; justify-content:space-around; align-items:center;">
