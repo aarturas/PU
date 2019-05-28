@@ -67,6 +67,9 @@
                             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('kursai.index') }}"> 1. Visi kursai </a>
+
+    {{--                                        Įdedame if'ą su "(Auth::user)->tipa", kad meniu būtų galima pasirinkti arba dėstytoja, arba studentą                             --}}
+
                                 @if(Auth::user()->tipa == 1)
                                     <a class="dropdown-item" href="{{ route('kursai.create') }}">2. Naujas kursas </a>
                                 @endif

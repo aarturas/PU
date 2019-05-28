@@ -8,6 +8,7 @@ use App\Grupe;
 use App\Kursai;
 use App\User;
 use Validator;
+use App\StudentoGrupe;
 
 
 use Illuminate\Http\Request;
@@ -23,8 +24,6 @@ class FailaiController extends Controller
     {
         return view('failai.index', ['collection' => Failai::all()]);
         // return view('failai.index', ['collection' => Paskaito::all()]);
-
-
     }
 
 
@@ -34,6 +33,7 @@ class FailaiController extends Controller
 
     public function create()
     {
+//                                        CREATE  FailaiController:    Įrašome dėstytoją, kur dėstytojo "tipas" bus (1)
         $destytojai = User::where('tipa', 1)->get();
 
         return view('failai.create', ['destytojai'=> $destytojai] ) ;
@@ -49,7 +49,7 @@ class FailaiController extends Controller
 //                                    ------------   validatorius - STORE   ---------
 $validator = Validator::make($request->all(), 
 [
-    // 'name' => ['required', 'min:3', 'max:64'],
+//  'name' => ['required', 'min:3', 'max:64'],
     'photo' => ['sometimes','required','max:20000','mimes:jpg,png,jpeg']
 ],
 [
@@ -61,10 +61,6 @@ if ($validator->fails()) {
 
     return redirect()->route('failai.create')->withErrors($validator);
 }
-
-
-
-
 
 
     //                                            Failų  controlleryje į "store" įkeliame photo failą
@@ -116,7 +112,7 @@ if ($validator->fails()) {
     public function update(Request $request, Failai $failai)
     {
 
-//                                        ------------   validatorius - UPDATE   ------------
+//  --------------------------------------   validatorius - UPDATE   -----------------------------------
                 
         $validator = Validator::make($request->all(), 
         [
@@ -132,16 +128,10 @@ if ($validator->fails()) {
 
             return redirect()->route('failai.index',[$failai])->withErrors($validator);
             // return redirect()->route('failai.edit',[$failai])->withErrors($validator);
-
         }
        
 
-        //                                          photo ikelimas
-     
-
-        
-       
-
+        //  ------------------------------------  photo ikėlimas  ----------------------------------
 
         $file = $request->file('photo') ?? false;
         if ($file) {
@@ -159,10 +149,7 @@ if ($validator->fails()) {
         return redirect()->route('failai.index')->with('success_message', 'Failo : '.$failai->name.' informaciją sėkmingai atnaujinome!');
     }
 
-
-
 // ---------------------------------------------- DELETE ---------------------------------------------------------------------------------
-
 
 
     public function destroy(Failai $failai)

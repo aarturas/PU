@@ -24,8 +24,8 @@
 
  {{--                    2.   Renkamės (select'u) destytoją: vardą, pavardę                                                                 --}}
 
-{{-- <div class="form-group">
-        <label for="destytoja_id">Pasirinkti user</label> --}}
+<div class="form-group">
+        <label for="destytoja_id">Pasirinkti user</label>
   
 {{--    --------------------     Pasirenkame destytoja (1) arba studenta (2) su select'u ir "where" (įrašome rankiniu būdu)  ---------------  --}}
 

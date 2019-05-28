@@ -8,6 +8,8 @@ use App\Grupe;
 use App\Kursai;
 use App\User;
 use Auth;
+use App\StudentoGrupe;
+
 
 
 use Illuminate\Http\Request;
@@ -28,7 +30,7 @@ class KursaiController extends Controller
     public function index()
 
     {
-
+    //                  INDEX  KursaiController: Jeigu bus ne dėstytojas,  "išmes" klaidą (403)!
         if(Auth::user()->tipa != 1) {
             abort(403);
         }
@@ -45,6 +47,7 @@ class KursaiController extends Controller
     public function create()
 
     {
+    //                CREATE  KursaiController: sukūriame "tipą", kur dėstytojui priskiriame skaičių (1)
         $destytojai = User::where('tipa', 1);
         
         return view('kursai.create', ['destytojai'=> $destytojai] ) ;

@@ -54,4 +54,9 @@ class User extends Authenticatable
     }
     
 
+    public function StudentoGrupe()
+    {
+        return $this->belongsTo('App\User', 'user_id', 'id');
+    }
+
 }

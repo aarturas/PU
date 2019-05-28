@@ -8,6 +8,8 @@ use App\Grupe;
 use App\Kursai;
 use App\User;
 use Hash;
+use App\StudentoGrupe;
+
 
 
 use Illuminate\Http\Request;
@@ -67,7 +69,7 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        return view('user.edit', ['collection' => Grupe::all(),'user' => $user]);
+        return view('user.edit', ['collection' => Grupe::all(),'user' => $user, 'collection' => StudentoGrupe::all()]);
 
     }
 
