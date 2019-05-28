@@ -11,10 +11,9 @@
     
                         <form action="{{route('grupe.store')}}" method="POST">
 
-{{--                             1. Renkamės (select'u) paskaitas / kursus                         --}}
+{{--                     1. Renkamės (select'u) paskaitas / kursus                                                            --}}
 <div class="form-group">
                                              <label >Pasirinkti paskaitą</label>
-
         <select class="form-control"name="kursai_id"  name="kursai_id">
                 @foreach (App\Kursai::all() as $item)
                         <option value="{{$item->id}}">{{$item->name}} </option>
@@ -23,12 +22,12 @@
 </div>
 
 
- {{--                           2.   Renkamės (select'u) destytoją: vardą, pavardę                  --}}
+ {{--                    2.   Renkamės (select'u) destytoją: vardą, pavardę                                                                 --}}
 
-<div class="form-group">
-        <label for="destytoja_id">Pasirinkti user</label>
+{{-- <div class="form-group">
+        <label for="destytoja_id">Pasirinkti user</label> --}}
   
-{{--    --------------------     Pasirenkame destytoja (1) arba studenta (2) su select'u ir "where"                                    --}}
+{{--    --------------------     Pasirenkame destytoja (1) arba studenta (2) su select'u ir "where" (įrašome rankiniu būdu)  ---------------  --}}
 
             <select class="form-control" id="destytoja_id" name="destytoja_id">
                 @foreach (App\User::where('tipa', 2)->get() as $item)
@@ -41,10 +40,7 @@
 
 
 
-
-
-
- {{--                          3.   Paskaitos pavadinimas                              --}}
+ {{--                    3.   Paskaitos pavadinimas                                                                                                --}}
 <div class="form-group">
                                              <label for="name">Grupės pavadinimas</label>
 
@@ -52,21 +48,21 @@
     <small id="emailHelp" class="form-text text-muted">Prašom įrašyti grupės pavadinimą.</small>
 </div>
 
-  {{--                            4.   Pradzia  -- started_at                            --}}
+
+  {{--                   4.   Pradzia  -- started_at                                                                                              --}}
 <div class="form-group">   
                                             <label for="started_at">Paskaitų kursų pradžia</label>
-
             <input type="text" class="form-control" name="started_at" id="started_at" aria-describedby="emailHelp" placeholder="Paskaitų kursų pradžia" value="{{old('started_at', '')}}">
 </div>
 
-     {{--                         5.    Pabaiga -- finished_at                            --}}
+
+     {{--                5.    Pabaiga -- finished_at                                                                                             --}}
 <div class="form-group">
                                             <label for="finished_at">Paskaitų kursų pabaiga</label>
-
             <input type="text" class="form-control" name="finished_at" id="finished_at" aria-describedby="emailHelp" placeholder="Paskaitų kursų pabaiga" value="{{old('finished_at', '')}}">
 </div>
             @csrf
-                    <button type="submit" class="btn btn-primary">Įrašyti</button>
+                                       <button type="submit" class="btn btn-primary">Įrašyti</button>
                     </form>
 </div>
 </div>

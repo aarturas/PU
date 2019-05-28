@@ -13,7 +13,7 @@
 <div class="row" style="margin-bottom: 10px;">
 <div class="col-md-9">
 
-<a href="{{route('user.show', $user)}}" class="list-group-item list-group-item-action list-group-item-primary">{{ $user->name }} {{ $user->surname }}-tel: {{ $user->phone }} </a>
+<a href="{{route('user.show', $user)}}" class="list-group-item list-group-item-action list-group-item-primary"> {{ $user->tipa }}{{ $user->name }} {{ $user->surname }}-tel: {{ $user->phone }} </a>
 </div>
 
 <div class="col-md-3" style="display:flex; justify-content:space-around; align-items:center;">

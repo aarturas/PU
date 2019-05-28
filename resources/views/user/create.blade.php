@@ -6,11 +6,10 @@
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="card">
-<div class="card-header"></div>
-<div class="card-header">Naujo user'io įrašymas</div>
+<div class="card-header"> Naujo user'io įrašymas </div>
 <div class="card-body">
                     
-                    <form action="{{route('user.store')}}"> 
+                    <form action="{{route('user.store')}}" method="POST"> 
 
 {{--                                    1. Userio vardas                                                               --}}
 <div class="form-group">
@@ -36,7 +35,7 @@
 </div>
 </div>
 
- {{--                                  4.  telefonas / phone                                                                                               --}}
+ {{--                                  4.  telefonas / phone                                                                                                 --}}
 <div class="col-sm-6">
 <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
             <label for="phone">Phone No:</label>
@@ -46,13 +45,13 @@
 </div>
 </div>
              @csrf
-{{--                                   5.   'Tipo' pasirinkimas - ar dėstytoją (1), ar studentą pasirinkti (2)                                --}}
+{{--                                   5.   'Tipo' pasirinkimas - ar dėstytoją (1), ar studentą pasirinkti (2)                                               --}}
             <select name="tipa">
                     <option value="1">Destytojas</option>
                     <option value="2">Studentas</option>
             </select>
 
-{{--                                    6.  Įrašyti slaptažodį įrašant naują userį                                                                       --}}
+{{--                                    6.  Įrašyti slaptažodį įrašant naują userį                                                                            --}}
 <div class="form-group">
             <label>Useriu passwordas</label>
             <input type="text" class="form-control" name="password" placeholder="Įrašykite slaptažodį" value="{{old('name')}}">

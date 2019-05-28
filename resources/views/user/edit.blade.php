@@ -9,22 +9,22 @@
 <div class="card-body">
                         <form action="{{route('user.update',[$user])}}" method="POST">
 
-{{--                                          langelis su jau irasytais user vardu ir pavarde is ankstesnes lenteles                                           --}}
+{{--                                          langelis su jau irasytais user vardu ir pavarde is ankstesnes lenteles                                              --}}
 
-{{--                                            1. Userio vardas                                                               --}}
+{{--                                         1. Userio vardas                                                                                                  --}}
 <div class="form-group">
         <label for="name">Userio vardas</label>
         <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Useriu vardas" value="{{old('name', $user->name)}}">
         <small id="emailHelp" class="form-text text-muted">Please, enter new user name. Max lenght 64 symbols.</small>
 </div>
 
-{{--                                         2.  Userio pavarde                                                                                                  --}}
+{{--                                         2.  Userio pavarde                                                                                                   --}}
 <div class="form-group">
         <label for="surname">Userio pavarde</label>
         <input type="text" class="form-control" name="surname" id="surname" aria-describedby="emailHelp" placeholder="Userio pavarde" value="{{old('surname', $user->surname)}}">
         <small id="emailHelp" class="form-text text-muted">Please, enter new user surname. Max lenght 64 symbols.</small>
 </div>
-
+ {{--                                        3.  El.paštas                                                                                                          --}}
 <div class="row">
 <div class="col-md-6">
 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
@@ -34,7 +34,7 @@
             <span class="text-danger">{{ $errors->first('email') }}</span>
 </div>
 </div>
-                                    
+{{--                                         4.  Telefonas                                                                                                           --}}
 <div class="col-md-6">
 <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
 
@@ -44,21 +44,22 @@
 </div>
 </div>
 </div>
-
+{{--                                         5.  Komentarai                                                                                                         --}}
 <div class="form-group">
             <label for="comment">Comment</label>
-                            {{-- <input type="text" class="form-control" name="comment" id="comment" aria-describedby="emailHelp" placeholder="comment" value="{{old('comment', '')}}"> --}}
                 <textarea class="form-control" id="summernote" name="comment" rows="3"></textarea>
             <small class="form-text text-muted">Please, wright a new comment. Max lenght 200 symbols.</small>
 </div>
 
-{{--                                   5.   'Tipo' pasirinkimas - ar dėstytoją, ar studentą pasirnkti                                 --}}
+{{--                                         6. 'Tipo' pasirinkimas - ar dėstytoją, ar studentą pasirinkti                                                            --}}
 <select name="tipa">
-        {{-- <option value="1">Destytojas</option> --}}
-        <option value="{{ old('email', $user->email) }}">Destytojas</option>
-
+        <option value="1">Destytojas</option>
+        {{-- <option value="{{ old('email', $user->email) }}">Destytojas</option> --}}
         <option value="2">Studentas</option>
 </select>
+
+
+
 
 <button type="submit" class="btn btn-primary">Enter</button>
                 @csrf

@@ -24,14 +24,35 @@
 
 
  {{--                                             Renkamės destytoją pagal vardą, pavardę                                    --}}
- <div class="form-group">
+ {{-- <div class="form-group">
         <label for="destytoja_id">Pasirinkite dėstytoją</label>
 <select class="form-control" id="destytoja_id" name="destytoja_id">
 @foreach ($destytojai as $item)
 <option value="{{$item->id}}">{{$item->name}} {{$item->surname}}</option>
 @endforeach
 </select>
-</div>
+</div> --}}
+
+
+
+
+<div class="form-group">
+        <label for="destytoja_id">Pasirinkti user</label>
+  
+{{--    --------------------     Pasirenkame destytoja (1) arba studenta (2) su select'u ir "where"                                    --}}
+
+            <select class="form-control" id="destytoja_id" name="destytoja_id">
+                @foreach (App\User::where('tipa', 1)->get() as $item)
+                    <option value="{{$item->id}}">{{$item->name}} {{$item->surname}}</option>
+                @endforeach
+            </select>
+
+        <small class="form-text text-muted">Prašom pasirinkti user iš sąrašo.</small>
+</div> 
+
+
+
+
 
 
  {{--                                                  Paskaitų pavadinimas                                                     --}}
