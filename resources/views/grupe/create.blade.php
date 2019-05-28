@@ -1,36 +1,48 @@
 @extends('layouts.app')
 @section('content')
-                         <h4 class="text-center">create.blade.grupes</h4>
+                         <h6 class="text-center">create.blade.grupes</h6>
                          <h3 class="text-center">Naujos grupės sukūrimas</h3>
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="card">
-<div class="card-header" style="color:indianred">Nauja grupė</div>
+<div class="card-header" style="color:blue">Nauja grupė</div>
 <div class="card-body">
     
                         <form action="{{route('grupe.store')}}" method="POST">
 
-    {{--                             1. Renkamės (select'u) paskaitas / kursus                         --}}
+{{--                             1. Renkamės (select'u) paskaitas / kursus                         --}}
 <div class="form-group">
                                              <label >Pasirinkti paskaitą</label>
+
         <select class="form-control"name="kursai_id"  name="kursai_id">
                 @foreach (App\Kursai::all() as $item)
-                        <option value="{{$item->id}}">{{$item->name}} {{$item->surname}}</option>
+                        <option value="{{$item->id}}">{{$item->name}} </option>
                 @endforeach
         </select>
 </div>
 
+
  {{--                           2.   Renkamės (select'u) destytoją: vardą, pavardę                  --}}
- <div class="form-group">
-                                             <label for="destytoja_id">Pasirinkite dėstytoją</label>
-    
-        <select class="form-control" id="destytoja_id" name="destytoja_id">
-                @foreach ($destytojai as $item)
-                        <option value="{{$item->id}}">{{$item->name}} {{$item->destytojai_id}}</option>
+
+<div class="form-group">
+        <label for="destytoja_id">Pasirinkti user</label>
+  
+{{--    --------------------     Pasirenkame destytoja (1) arba studenta (2) su select'u ir "where"                                    --}}
+
+            <select class="form-control" id="destytoja_id" name="destytoja_id">
+                @foreach (App\User::where('tipa', 2)->get() as $item)
+                    <option value="{{$item->id}}">{{$item->name}} {{$item->surname}}</option>
                 @endforeach
-        </select>
-</div>
+            </select>
+
+        <small class="form-text text-muted">Prašom pasirinkti user iš sąrašo.</small>
+</div> 
+
+
+
+
+
 
  {{--                          3.   Paskaitos pavadinimas                              --}}
 <div class="form-group">

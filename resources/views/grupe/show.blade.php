@@ -26,11 +26,11 @@
         <div><b> Kursų pavadinimas :</b> {{$grupe->GrupeKurpav->name}} </div>
 {{--    <div><b>Kursu id :</b> {{$grupe->kursai_id}}</div>                                           --}}
 <div>
-{{--                                 3.  Info lentelėje-  Kursų pradžia :                                     --}}
+{{--                                 3.  Info lentelėje-  Kursų pradžia :                            --}}
         <b>Kursų pradžia : </b>  {{$grupe->started_at}} 
 </div>
 <div>
- {{--                                4.  info lenteleje-  Kursų pabaiga :                                     --}}
+ {{--                                4.  info lenteleje-  Kursų pabaiga :                            --}}
          <b>Kursų pabaiga : </b> {{$grupe->finished_at}}
  </div>
 </div>  

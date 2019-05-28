@@ -130,7 +130,9 @@ if ($validator->fails()) {
         if ($validator->fails()) {
             $request->flash();
 
-            return redirect()->route('failai.edit',[$failai])->withErrors($validator);
+            return redirect()->route('failai.index',[$failai])->withErrors($validator);
+            // return redirect()->route('failai.edit',[$failai])->withErrors($validator);
+
         }
        
 

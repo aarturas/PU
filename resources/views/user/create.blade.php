@@ -12,14 +12,14 @@
                     
                     <form action="{{route('user.store')}}"> 
 
-{{--                                            1. Userio vardas                                                               --}}
+{{--                                    1. Userio vardas                                                               --}}
 <div class="form-group">
           <label for="name">Userio vardas</label>
           <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Useriu vardas" value="{{old('name')}}">
           <small id="emailHelp" class="form-text text-muted">Please, enter new user name. Max lenght 64 symbols.</small>
 </div>
 
- {{--                                         2.  Userio pavarde                                                                                                  --}}
+ {{--                                   2.  Userio pavarde                                                                                                  --}}
 <div class="form-group">
            <label for="surname">Userio pavarde</label>
            <input type="text" class="form-control" name="surname" id="surname" aria-describedby="emailHelp" placeholder="Userio pavarde" value="{{old('surname')}}">
@@ -28,7 +28,7 @@
 
 <div class="row">
 <div class="col-sm-6">
-{{--                                         3.  el.pastas / email                                                                                                 --}}
+{{--                                   3.  el.pastas / email                                                                                                 --}}
 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email" value="{{ old('email') }}">
@@ -36,7 +36,7 @@
 </div>
 </div>
 
- {{--                                           4.  telefonas / phone                                                                                               --}}
+ {{--                                  4.  telefonas / phone                                                                                               --}}
 <div class="col-sm-6">
 <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
             <label for="phone">Phone No:</label>
@@ -46,7 +46,7 @@
 </div>
 </div>
              @csrf
-{{--                                   5.   'Tipo' pasirinkimas - ar dėstytoją, ar studentą pasirnkti                                 --}}
+{{--                                   5.   'Tipo' pasirinkimas - ar dėstytoją (1), ar studentą pasirinkti (2)                                --}}
             <select name="tipa">
                     <option value="1">Destytojas</option>
                     <option value="2">Studentas</option>

@@ -10,12 +10,13 @@
 <div class="card-body">
 <div class="list-group">
 
-{{--                Nuoroda i kelią, jeigu pasirenkame 'edit', nukreipiami į 'failai.edit' kelią                        --}}
+ 
+{{--                Nuoroda į kelią, jeigu pasirenkame 'edit', nukreipiame į 'failai.edit' kelią                        --}}
 <div><a href="{{route('failai.edit', $failai)}}">Redaguoti</a></div>
 
 {{--                          Failo info (iš modelio 'failai.php') :                                                    --}}
    
-{{--                         1.  Paskaitos id:                                                                          --}}
+{{--                          1.  Paskaitos id:                                                                          --}}
 <div><b> Paskaitos id :</b> {{$failai->paskaito_id}} </div>
 
 {{--                          2.  Failas                                                                                --}}
