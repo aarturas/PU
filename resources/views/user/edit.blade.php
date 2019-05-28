@@ -9,7 +9,7 @@
 <div class="card-body">
                         <form action="{{route('user.update',[$user])}}" method="POST">
 
-{{--                                          langelis su jau irasytais user vardu ir pavarde is ankstesnes lenteles                                              --}}
+{{--                        Langelis su jau irasytais user vardu ir pavarde is ankstesnes lenteles                                                            --}}
 
 {{--                                         1. Userio vardas                                                                                                  --}}
 <div class="form-group">
@@ -51,14 +51,11 @@
             <small class="form-text text-muted">Please, wright a new comment. Max lenght 200 symbols.</small>
 </div>
 
-{{--                                         6. 'Tipo' pasirinkimas - ar dėstytoją, ar studentą pasirinkti                                                            --}}
+{{--                                         6. (User) 'Tipo' pasirinkimas -  dėstytoją (1), ar studentą (2)                                                            --}}
 <select name="tipa">
         <option value="1">Destytojas</option>
-        {{-- <option value="{{ old('email', $user->email) }}">Destytojas</option> --}}
         <option value="2">Studentas</option>
 </select>
-
-
 
 
 <button type="submit" class="btn btn-primary">Enter</button>

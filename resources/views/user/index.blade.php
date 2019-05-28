@@ -6,14 +6,14 @@
 <div class="row justify-content-center">
 <div class="col-md-8">
 <div class="card">
-<div class="card-header">Userių sąrašas</div>
+<div class="card-header" style="color:blue">Userių sąrašas</div>
 <div class="card-body">
 <div class="list-group">
                                               @foreach ($collection as $user)
 <div class="row" style="margin-bottom: 10px;">
 <div class="col-md-9">
 
-<a href="{{route('user.show', $user)}}" class="list-group-item list-group-item-action list-group-item-primary"> {{ $user->tipa }}{{ $user->name }} {{ $user->surname }}-tel: {{ $user->phone }} </a>
+<a href="{{route('user.show', $user)}}" class="list-group-item list-group-item-action list-group-item-primary"> {{ $user->tipa }} {{ $user->name }} {{ $user->surname }} - tel: {{ $user->phone }} </a>
 </div>
 
 <div class="col-md-3" style="display:flex; justify-content:space-around; align-items:center;">

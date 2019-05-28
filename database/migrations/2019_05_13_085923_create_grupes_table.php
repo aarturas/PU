@@ -15,7 +15,6 @@ class CreateGrupesTable extends Migration
             $table->unsignedBigInteger('destytoja_id');
             $table->foreign('kursai_id')->references('id')->on('kursais');
             $table->foreign('destytoja_id')->references('id')->on('users')->nullable();
-         // $table->foreign('destytoja_id')->references('id')->on('vartotojas')->nullable();
             $table->string('name',64);
             $table->date('started_at');
             $table->date('finished_at');

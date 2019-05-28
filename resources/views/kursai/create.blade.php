@@ -13,15 +13,27 @@
 
 <div class="form-group">
 
-    {{--                                                                 Naujo kurso įrašymas                                  --}}
+{{--                                                               1.  Naujo kurso įrašymas                                  --}}
     <label for="name" style="color:blue">Kurso pavadinimas</label>
         <input type="text" class="form-control" name="name" id="name" placeholder="Įrašykite naują kursą" value="{{old('name', '')}}">
     <small id="emailHelp" class="form-text text-muted">Prašom įrašyti naujo kurso pavadinimą.</small>
 
 </div>
+
+{{--                                                               2.  Apraso langelis  - papildomas                             --}}
+<div class="form-group">
+    <label for="aprasas"> Aprasas: </label>
+    <textarea type="text" class="form-control luna-aprasas" id="message" placeholder="Kurso aprasymas" name="aprasas" required></textarea>
+</div>
+
+
             <button type="submit" class="btn btn-primary">Įrašyti</button>
-                @csrf
+                                                                                 @csrf
                     </form>
+
+
+
+
 </div>
 </div>
 </div>

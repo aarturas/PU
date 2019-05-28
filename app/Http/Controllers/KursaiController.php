@@ -7,6 +7,7 @@ use App\Paskaito;
 use App\Grupe;
 use App\Kursai;
 use App\User;
+use Auth;
 
 
 use Illuminate\Http\Request;
@@ -15,9 +16,25 @@ class KursaiController extends Controller
 {
 
 
+
+    public function __construct()
+    {
+       
+
+    }
+
+
+
     public function index()
 
     {
+
+        if(Auth::user()->tipa != 1) {
+            abort(403);
+        }
+
+        
+
         return view('kursai.index', ['collection' => Kursai::all()]);
     }
 

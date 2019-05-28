@@ -40,9 +40,7 @@
                                            <label for="summernote">Aprašas</label>
  {{--                                                                              !!  ir  !! - tagus daro matomus summernote langelyje                   --}}
  {{--                                                                            bet matomi ir 'figuriniai' skliausteliai                                  --}}
- <textarea class="form-control" id="summernote" name="aprasas" rows="3">{{!!old ('aprasas', $paskaito->aprasas)!!}}</textarea>                         
-
-{{--  <textarea class="form-control" id="summernote" name="aprasas" rows="3">{{old ('aprasas', $paskaito->aprasas)}}</textarea> --}}
+      <textarea class="form-control" id="summernote" name="aprasas" rows="3">{{!!old ('aprasas', $paskaito->aprasas)!!}}</textarea>                         
       <small class="form-text text-muted">Prašome įrašyti savo pastabas apie paskaitas.</small>
 </div>
                     @csrf

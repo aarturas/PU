@@ -22,7 +22,6 @@ class GrupeController extends Controller
 
 
 
-
     public function create()
     {
 
@@ -30,8 +29,6 @@ class GrupeController extends Controller
 
         return view('grupe.create', ['destytojai'=> $destytojai] ) ;
     }
-
-
 
 
     
@@ -50,10 +47,7 @@ class GrupeController extends Controller
         // return redirect()->route('grupe.index');
 
         return redirect()->route('grupe.index')->with('success_message', ' Grupė: '.$grupe->name.' buvo sėkmingai įrašyta!');
-
     }
-
-
 
 
     
@@ -64,18 +58,12 @@ class GrupeController extends Controller
 
 
 
-
-
-
     public function edit(Grupe $grupe)
     {
         $destytojai = User::where('tipa', 1)->get();
 
         return view('grupe.edit', ['grupe' => $grupe,'destytojai'=> $destytojai]);
     }
-
-
-
 
 
 
@@ -93,8 +81,6 @@ class GrupeController extends Controller
      // return redirect()->route('grupe.index');
         return redirect()->route('grupe.index')->with('success_message', 'Grupę : '.$grupe->name.' pataisėme!');
     }
-    
-
 
 
 
