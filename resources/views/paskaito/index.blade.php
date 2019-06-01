@@ -23,15 +23,10 @@
      @if(in_array(Auth::user()->id, $paskaito->PaskaitoStudentoGrupe->pluck('studento_id')->toArray()))
 
 
-
-
-
-
    {{--                                               1.  Pasirenkame, kad rodytų 'grupes_id', ir kurso 'pavadinimą'                                                                                  --}}
-<a href="{{route('paskaito.show', $paskaito)}}" class="list-group-item list-group-item-action list-group-item-primary">{{$paskaito->grupe_id}} id. Kursas : {{$paskaito->pavadinimas}} Data: {{$paskaito->data}}</a>
+<a href="{{route('paskaito.show', $paskaito)}}" class="list-group-item list-group-item-action list-group-item-primary"> Grupės id : {{$paskaito->grupe_id}} | Kursas : {{$paskaito->pavadinimas}} | Data : {{$paskaito->data}}</a>
 </div>
 <div class="col-md-2" style="display:flex; justify-content:space-around; align-items:center;">
-    
 
    
 {{--                                                  2.  paskaitos 'edit'o' mygtukas su 'edit' keliu                                                              --}}

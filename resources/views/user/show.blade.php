@@ -30,6 +30,10 @@
 <div><b> User telefonas :</b> {{$user->phone}} </div>
 
 
+{{-- <div><b> User telefonas :</b> {{$user->paskaito_id->pavadinimas}} </div> --}}
+
+
+
 
 
 
