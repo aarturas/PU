@@ -24,4 +24,11 @@ class Paskaito extends Model
         return $this->belongsTo('App\Grupe', 'kursai_id', 'id');
     }
 
+
+    public function PaskaitoStudentoGrupe()
+    {
+        return $this->hasMany('App\StudentoGrupe', 'grupe_id', 'id');
+    }
+
+
 }

@@ -33,7 +33,7 @@ class FailaiController extends Controller
 
     public function create()
     {
-//                                        CREATE  FailaiController:    Įrašome dėstytoją, kur dėstytojo "tipas" bus (1)
+//                            CREATE  FailaiController:   Įrašome dėstytoją, kur dėstytojo "tipas" bus (1)
         $destytojai = User::where('tipa', 1)->get();
 
         return view('failai.create', ['destytojai'=> $destytojai] ) ;
@@ -46,7 +46,7 @@ class FailaiController extends Controller
     public function store(Request $request)
     {
 
-//                                    ------------   validatorius - STORE   ---------
+//                             ------------   validatorius - STORE   ---------
 $validator = Validator::make($request->all(), 
 [
 //  'name' => ['required', 'min:3', 'max:64'],

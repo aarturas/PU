@@ -36,5 +36,10 @@ class Grupe extends Model
         return $this->belongsTo('App\Grupe', 'kursai_id', 'id');
     }
 
+    //   filtruojame studentoGrupes, kad matytusi jo grupe_id???
+    public function GrupeStudentoGrupe()
+    {
+        return $this->hasMany('App\StudentoGrupe', 'grupe_id', 'id');
+    }
 }
 

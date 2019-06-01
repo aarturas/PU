@@ -9,51 +9,34 @@
 <div class="card-header" style="color:blue">Edit grupę</div>
 <div class="card-body">
     
+
                     <form action="{{route('grupe.update', [$grupe])}}" method="POST">  
 
-                         {{--                                              Pridedame/pasirenkame kursus i grupe                                      --}}
+                                @if(Auth::user()->tipa == 1)
+
+{{--                                 Pridedame/pasirenkame kursus i grupe                                      --}}
 <div class="form-group">
-        <label for="kursai_id">Pridėti paskaitą grupei</label>
-<select class="form-control" id="kursai_id" name="kursai_id">
-@foreach (App\Kursai::all() as $item)
-<option value="{{$item->id}}" @if($item->id==$grupe->kursai_id) selected @endif>{{$item->name}} {{$item->surname}}</option>
-@endforeach
-</select>
+        <label for="kursai_id">Pasirinkti grupę</label>
+                <select class="form-control" id="kursai_id" name="kursai_id">
+                     @foreach (App\Kursai::all() as $item)
+                          <option value="{{$item->id}}" @if($item->id==$grupe->kursai_id) selected @endif>{{$item->name}} {{$item->surname}}</option>
+                     @endforeach
+                </select>
 <small class="form-text text-muted">Prašom pasirinkti paskaitą.</small>
 </div>
 
 
- {{--                                             Renkamės destytoją pagal vardą, pavardę                                    --}}
- {{-- <div class="form-group">
-        <label for="destytoja_id">Pasirinkite dėstytoją</label>
-<select class="form-control" id="destytoja_id" name="destytoja_id">
-@foreach ($destytojai as $item)
-<option value="{{$item->id}}">{{$item->name}} {{$item->surname}}</option>
-@endforeach
-</select>
-</div> --}}
-
-
-
+{{--    --------------------     Pasirenkame destytoja (1) arba studenta (2) su select'u ir "where"                                    --}}
 
 <div class="form-group">
         <label for="destytoja_id">Pasirinkti user</label>
-  
-{{--    --------------------     Pasirenkame destytoja (1) arba studenta (2) su select'u ir "where"                                    --}}
-
             <select class="form-control" id="destytoja_id" name="destytoja_id">
                 @foreach (App\User::where('tipa', 1)->get() as $item)
-                    <option value="{{$item->id}}">{{$item->name}} {{$item->surname}}</option>
+                    <option value=" {{$item->id}}>{{$item->name}} {{$item->surname}}" </option>
                 @endforeach
             </select>
-
         <small class="form-text text-muted">Prašom pasirinkti user iš sąrašo.</small>
 </div> 
-
-
-
-
-
 
  {{--                                                  Paskaitų pavadinimas                                                     --}}
  <div class="form-group">
@@ -82,15 +65,17 @@
   
 
  {{--                                Mokinio pavadinimo įrašymas                     --}}
- <div class="form-group">
+ {{-- <div class="form-group">
         <label for="name">Įrašyti naują mokinį</label>
         <input type="text" class="form-control" name="name" id="name" placeholder="Įrašykite naują mokinį" value="{{old('name', '')}}">
         <small id="emailHelp" class="form-text text-muted">Įrašyti naują mokinį.</small>
-</div>
+</div> --}}
 
         @csrf
                     <button type="submit" class="btn btn-primary">Enter</button>
                 </form>
+@endif
+
 
 </div>
 </div>

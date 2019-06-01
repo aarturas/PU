@@ -54,9 +54,9 @@ class User extends Authenticatable
     }
     
 
-    public function StudentoGrupe()
+    public function userStudentoGrupe() 
     {
-        return $this->belongsTo('App\User', 'user_id', 'id');
+        return $this->hasMany('App\User', 'studentoGrupe_id', 'id');
     }
 
 }

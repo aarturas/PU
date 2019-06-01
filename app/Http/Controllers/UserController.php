@@ -69,7 +69,9 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        return view('user.edit', ['collection' => Grupe::all(),'user' => $user, 'collection' => StudentoGrupe::all()]);
+    //                                   I edita ikeliame "StudentoGrupe", kur "studento_id yra vadinama "user_id" 
+        
+    return view('user.edit', ['grupes' => Grupe::all(),'user' => $user, 'studento_grupes' => StudentoGrupe::where('studento_id', $user->id)->get()]);
 
     }
 
@@ -86,7 +88,7 @@ class UserController extends Controller
 
         // return redirect()->route('user.index');
 
-        return redirect()->route('user.index')->with('success_message', 'Userį : '.$user->name.' informaciją atnaujinome!');
+        return redirect()->route('user.index')->with('success_message', 'Userio : '.$user->name.' informaciją atnaujinome!');
 
     }
 

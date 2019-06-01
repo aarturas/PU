@@ -13,11 +13,27 @@
 <div class="row" style="margin-bottom: 10px;">
 <div class="col-md-9">
 
+
+
+
+   {{-- in_array -   php funcija iesko masyve reiksmiu
+     Auth::user()->id -   yra to userio kuris siuo metu prisijunges id
+     $grupe->GrupeStudentoGrupe->pluck('studento_id')->toArray() -   yra masyvas su visais studentu id, kurie dalyvauja sioje grupeje --}}
+
+     @if(in_array(Auth::user()->id, $paskaito->PaskaitoStudentoGrupe->pluck('studento_id')->toArray()))
+
+
+
+
+
+
    {{--                                               1.  Pasirenkame, kad rodytų 'grupes_id', ir kurso 'pavadinimą'                                                                                  --}}
-<a href="{{route('paskaito.show', $paskaito)}}" class="list-group-item list-group-item-action list-group-item-primary">{{$paskaito->grupe_id}} Kursas : {{$paskaito->pavadinimas}} Data: {{$paskaito->data}}</a>
+<a href="{{route('paskaito.show', $paskaito)}}" class="list-group-item list-group-item-action list-group-item-primary">{{$paskaito->grupe_id}} id. Kursas : {{$paskaito->pavadinimas}} Data: {{$paskaito->data}}</a>
 </div>
-<div class="col-md-3" style="display:flex; justify-content:space-around; align-items:center;">
+<div class="col-md-2" style="display:flex; justify-content:space-around; align-items:center;">
     
+
+   
 {{--                                                  2.  paskaitos 'edit'o' mygtukas su 'edit' keliu                                                              --}}
         <a href="{{route('paskaito.edit', $paskaito)}}">
             <button type="submit" class="btn btn-primary">
@@ -36,6 +52,8 @@
         </form>
 </div>
 </div>
+@endif
+
                     @endforeach
 </div>
 </div>

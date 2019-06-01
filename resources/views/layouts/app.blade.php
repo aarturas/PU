@@ -43,7 +43,6 @@
 
                     </ul>
 
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -59,106 +58,111 @@
                         @else
 
 
-
-
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+        <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Kursai <span class="caret"></span>
-                            </a>
+            </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('kursai.index') }}"> 1. Visi kursai </a>
-
-    {{--                                        Įdedame if'ą su "(Auth::user)->tipa", kad meniu būtų galima pasirinkti arba dėstytoja, arba studentą                             --}}
-
-                                @if(Auth::user()->tipa == 1)
-                                    <a class="dropdown-item" href="{{ route('kursai.create') }}">2. Naujas kursas </a>
-                                @endif
+    
+                    <a class="dropdown-item" href="{{ route('kursai.index') }}"> 1. Visi kursai </a>
+{{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "naujo kurso" meniu langelyje                            --}}
+                @if(Auth::user()->tipa == 1)
+                    <a class="dropdown-item" href="{{ route('kursai.create') }}">2. Naujas kursas </a>
+                @endif
 </div>
-                        </li>
+        </li>
 
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Grupes <span class="caret"></span>
-                            </a>
+        <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                Grupes <span class="caret"></span>
+            </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('grupe.index') }}"> 1. Visos grupes </a>
-                                <a class="dropdown-item" href="{{ route('grupe.create') }}"> 2. Nauja grupe</a>
+
+                <a class="dropdown-item" href="{{ route('grupe.index') }}"> 1. Visos grupes </a>
+
+{{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "naujos grupes" meniu langelyje                            --}}
+                @if(Auth::user()->tipa == 1)
+                    <a class="dropdown-item" href="{{ route('grupe.create') }}"> 2. Nauja grupe</a>
+                @endif
+
 </div>
-                        </li>
+        </li>
 
-
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Paskaitos <span class="caret"></span>
-                            </a>
+        <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                Paskaitos <span class="caret"></span>
+            </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('paskaito.index') }}"> 1. Visos paskaitos</a>
-                                <a class="dropdown-item" href="{{ route('paskaito.create') }}"> 2. Nauja paskaita</a>
+
+                <a class="dropdown-item" href="{{ route('paskaito.index') }}"> 1. Visos paskaitos</a>
+
+{{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "naujos paskaitos" meniu langelyje                            --}}
+                @if(Auth::user()->tipa == 1)
+                    <a class="dropdown-item" href="{{ route('paskaito.create') }}"> 2. Nauja paskaita</a>
+                @endif
+
 </div>
-                        </li>
+        </li>
 
-
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                User <span class="caret"></span>
-                            </a>
+        <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                User <span class="caret"></span>
+            </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('user.index') }}"> 1. Visi user</a>
-                                <a class="dropdown-item" href="{{ route('user.create') }}"> 2. Naujas user</a>
-{{-- </div>
 
+                <a class="dropdown-item" href="{{ route('user.index') }}"> 1. Visi user</a>
+
+{{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "nauju user'iu" meniu langelyje                            --}}
+                @if(Auth::user()->tipa == 1)
+                    <a class="dropdown-item" href="{{ route('user.create') }}"> 2. Naujas user</a>
+                @endif
+        </li>
+
+
+        <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                Failai <span class="caret"></span>
+            </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{{ route('destytoja.index') }}">Visi destytojai</a>
-        <a class="dropdown-item" href="{{ route('destytoja.create') }}">Naujas destytojas</a>
+
+                <a class="dropdown-item" href="{{ route('failai.index') }}"> 1. Visi failai</a>
+
+                {{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "nauju failu" meniu langelyje                            --}}
+                @if(Auth::user()->tipa == 1)
+                    <a class="dropdown-item" href="{{ route('failai.create') }}"> 2. Naujas failas</a>
+                @endif
+
 </div>
+        </li>
+
+
+
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
 
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{{ route('studenta.index') }}">Visi studentai</a>
-        <a class="dropdown-item" href="{{ route('studenta.create') }}">Naujas studentas</a>
-</div> --}}
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
 
-                        </li>
-
-
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Failai <span class="caret"></span>
-                            </a>
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('failai.index') }}"> 1. Visi failai</a>
-                                <a class="dropdown-item" href="{{ route('failai.create') }}"> 2. Naujas failas</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
 </div>
-                        </li>
-
-
-
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-</div>
-                            </li>
+    </li>
                         @endguest
-                    </ul>
+        </ul>
 </div>
 </div>
         </nav>
 
         <main class="py-4">
 
-
- {{--                                      validatoriui                           --}}
+ {{--                                                      validatoriui                                                                                      --}}
 
 <div class="container">
 <div class="row justify-content-center">
@@ -193,12 +197,9 @@
                                     {{session()->get('info_message')}}
                                 </div>
                             @endif
-
 </div>
 </div>
 </div>
-
-
             @yield('content')
         </main>
 </div>

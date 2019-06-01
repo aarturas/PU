@@ -79,11 +79,17 @@ Route::group(['prefix' => 'kursais'], function(){
 
 
 Route::group(['prefix' => 'studentoGrupes'], function(){
-   Route::get('', 'StudentoGrupeController@index')->name('studentoGrupe.index');
-   Route::get('create', 'StudentoGrupeController@create')->name('studentoGrupe.create');
-   Route::post('store', 'StudentoGrupeController@store')->name('studentoGrupe.store');
-   Route::get('edit/{studentoGrupe}', 'StudentoGrupeController@edit')->name('studentoGrupe.edit');
-   Route::post('update/{studentoGrupe}', 'StudentoGrupeController@update')->name('studentoGrupe.update');
-   Route::post('/delete/{studentoGrupe}', 'StudentoGrupeController@destroy')->name('studentoGrupe.destroy');
-   Route::get('show/{studentoGrupe}', 'StudentoGrupeController@show')->name('studentoGrupe.show');
+   // Route::get('', 'StudentoGrupeController@index')->name('studentoGrupe.index');
+   // Route::get('create/(', 'StudentoGrupeController@create')->name('studentoGrupe.create');
+   // Route::post('store', 'StudentoGrupeController@store')->name('studentoGrupe.store');
+   // Route::get('edit/{studentoGrupe}', 'StudentoGrupeController@edit')->name('studentoGrupe.edit');
+   // Route::post('update/{studentoGrupe}', 'StudentoGrupeController@update')->name('studentoGrupe.update');
+   // Route::get('show/{studentoGrupe}', 'StudentoGrupeController@show')->name('studentoGrupe.show');
+ 
+
+   //                   Sukuriame nauja kelia su 'add', kad butu galima sukurti studento pasirinkima
+   Route::post('add/{user}', 'StudentoGrupeController@add')->name('studentoGrupe.add');
+   Route::post('delete', 'StudentoGrupeController@destroy')->name('studentoGrupe.destroy');
+
 });
+

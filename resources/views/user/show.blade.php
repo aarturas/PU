@@ -30,6 +30,9 @@
 <div><b> User telefonas :</b> {{$user->phone}} </div>
 
 
+
+
+
                     
  
 </div>

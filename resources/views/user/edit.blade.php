@@ -9,6 +9,9 @@
 <div class="card-body">
                         <form action="{{route('user.update',[$user])}}" method="POST">
 
+                                @if(Auth::user()->tipa == 1)
+
+
 {{--                        Langelis su jau irasytais user vardu ir pavarde is ankstesnes lenteles                                                            --}}
 
 {{--                                         1. Userio vardas                                                                                                  --}}
@@ -29,7 +32,7 @@
 <div class="col-md-6">
 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                         
-            <label for="email">Email:</label>
+            <label for="email">El.paštas:</label>
                 <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email" value="{{ old('email', $user->email) }}">
             <span class="text-danger">{{ $errors->first('email') }}</span>
 </div>
@@ -38,7 +41,7 @@
 <div class="col-md-6">
 <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
 
-            <label for="phone">Phone No:</label>
+            <label for="phone">Telefonas:</label>
                 <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter Phone No" value="{{ old('phone', $user->phone) }}">
             <span class="text-danger">{{ $errors->first('phone') }}</span>
 </div>
@@ -56,11 +59,58 @@
         <option value="1">Destytojas</option>
         <option value="2">Studentas</option>
 </select>
-
-
-<button type="submit" class="btn btn-primary">Enter</button>
+                                             <button type="submit" class="btn btn-primary">Pasirinkti</button>
                 @csrf
-                               </form>
+                        </form>
+
+    {{-- mato tik destytojas --}}
+
+    {{-- @if(Auth::user()->tipa == 1) --}}
+
+
+{{-- $user patenka i kontrolerio antra argumenta --}}
+            <form action="{{route('studentoGrupe.add',[$user])}}" method="POST">
+
+                {{-- name patenka i kontrolerio request --}}
+        <label for="grupe_id" ><b>PRISKIRTI ( studentui / destytojui ) GRUPĘ</b></label>
+
+                <select class="form-control" name="grupe_id">
+                        @foreach ($grupes as $item)
+                            <option value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                </select>
+                <small class="form-text text-muted">Prašom priskirti Useriui grupę.</small>
+@csrf
+                          <button type="submit" class="btn btn-primary">Irasyti</button>
+            </form>
+
+
+            {{--                                         7. Studento grupes pavadinimas                                                     --}}
+
+<div class="form-group">
+        <form action="{{route('studentoGrupe.destroy')}}" method="POST">
+                @csrf
+        <label for="grupe_id" ><b>USERIO ( studento / destytojo ) GRUPĖS SĄRAŠAS</b></label>
+
+                <select class="form-control" name="grupe_id">
+                    @foreach ($studento_grupes as $item)
+                        <option value="{{$item->id}} "> {{$item->visaGrupe->name}} </option>
+                    @endforeach 
+                </select>
+            <small class="form-text text-muted">Prašom pasirinkti kokią grupę ištrinti.</small>
+        
+                        <button type="submit" class="btn btn-danger">Trinti</button>
+        </form>
+
+</div>
+
+
+
+
+
+ {{-- mato destytojas pabaiga    --}}
+ @endif
+
 </div>
 </div>
 </div>

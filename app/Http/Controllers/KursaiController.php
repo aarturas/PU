@@ -17,31 +17,28 @@ use Illuminate\Http\Request;
 class KursaiController extends Controller
 {
 
+    // public function __construct() 
+    // {
+    
+    // }
 
-
-    public function __construct()
-    {
-       
-
-    }
-
+    // ------------------------------------------------  INDEX  -----------------------------------------
 
 
     public function index()
 
     {
     //                  INDEX  KursaiController: Jeigu bus ne dėstytojas,  "išmes" klaidą (403)!
-        if(Auth::user()->tipa != 1) {
-            abort(403);
-        }
+        // if(Auth::user()->tipa != 1) {
+        //     abort(403);
+        // }
 
         
 
         return view('kursai.index', ['collection' => Kursai::all()]);
     }
 
-
-
+    // ------------------------------------------------  CREATE  -----------------------------------------
 
    
     public function create()
@@ -49,12 +46,11 @@ class KursaiController extends Controller
     {
     //                CREATE  KursaiController: sukūriame "tipą", kur dėstytojui priskiriame skaičių (1)
         $destytojai = User::where('tipa', 1);
-        
         return view('kursai.create', ['destytojai'=> $destytojai] ) ;
     }
 
 
-
+    // ------------------------------------------------  STORE  -----------------------------------------
 
 
     public function store(Request $request)
@@ -65,20 +61,20 @@ class KursaiController extends Controller
         $kursai->save();
 
     //  return redirect()->route('kursai.index');
-
         return redirect()->route('kursai.index')->with('success_message', ' Paskaita '.$kursai->name.' buvo sėkmingai įrašyta!');
     }
 
 
-
+    // ------------------------------------------------  SHOW  -----------------------------------------
 
    
     public function show(Kursai $kursai)
     {
-        //
+        return view('kursai.show', ['kursai' => $kursai]);
+        
     }
 
-
+    // ------------------------------------------------  EDIT  -----------------------------------------
 
 
     
@@ -88,8 +84,7 @@ class KursaiController extends Controller
     }
 
 
-
-
+    // ------------------------------------------------  UPDATE  -----------------------------------------
 
     
     public function update(Request $request, Kursai $kursai)
@@ -102,7 +97,7 @@ class KursaiController extends Controller
     }
 
 
-
+    // ------------------------------------------------  DELELE  -----------------------------------------
 
     
     public function destroy(Kursai $kursai)
@@ -115,6 +110,6 @@ class KursaiController extends Controller
 //  return redirect()->route('kursai.index');
 
     $kursai->delete();
-    return redirect()->route('kursai.index')->with('success_message', 'Paskaita : '.$kursai->name.' buvo sėkmingai ištrinta iš sąrašo!');
+    return redirect()->route('kursai.index')->with('success_message', 'Paskaita : '.$kursai->name.' buvo sėkmingai ištrinta(s) iš sąrašo!');
     }
 }

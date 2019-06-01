@@ -19,4 +19,14 @@ class Kursai extends Model
         return $this->hasMany('App\Grupe', 'kursai_id', 'id');
     }
 
+    
+    //    bandau padaryti analogiska koda "grupes.php", kad butu filtruojamas studento redagavimas
+    
+    public function KursaiStudentoGrupe()
+    {
+        return $this->hasMany('App\StudentoGrupe', 'kursai_id', 'id');
+    }
+
+    
+
 }
