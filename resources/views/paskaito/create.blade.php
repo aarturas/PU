@@ -31,7 +31,7 @@
 
 {{--  ------------------  3. Pavadinimas  -------------------------------------------------------------------------------------   --}}
         <div class="form-group">    
-                                      <label>Pavadinimas</label>
+                                      <label>Paskaitos pavadinimas</label>
         <input type="text" class="form-control" name="pavadinimas" id="pavadinimas" aria-describedby="emailHelp" placeholder="Pavadinimas" value="{{old('pavadinimas')}}">
 </div>
 

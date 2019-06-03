@@ -24,7 +24,9 @@
 {{--                                 3.   Kursų  pavadinimas (iš modelio 'grupe.php') :              --}}
 {{--                            kortelėje rodys kursų pavadinimą :                                   --}}
 
-        <div><b> Kursų pavadinimas :</b> {{$grupe->GrupeKurpav->name}} </div>
+        <div><b> Grupės pavadinimas :</b> {{$grupe->GrupeKurpav->name}} </div>
+        <div><b> Grupės id :</b> {{$grupe->id}} </div>
+
 {{--    <div><b>Kursu id :</b> {{$grupe->kursai_id}}</div>                                           --}}
 
 {{--                                 4.  Info lentelėje-  Kursų pradžia :                            --}}

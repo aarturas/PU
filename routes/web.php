@@ -79,8 +79,8 @@ Route::group(['prefix' => 'kursais'], function(){
 
 
 Route::group(['prefix' => 'studentoGrupes'], function(){
-   // Route::get('', 'StudentoGrupeController@index')->name('studentoGrupe.index');
-   // Route::get('create/(', 'StudentoGrupeController@create')->name('studentoGrupe.create');
+   Route::get('', 'StudentoGrupeController@index')->name('studentoGrupe.index');
+   Route::get('create/(', 'StudentoGrupeController@create')->name('studentoGrupe.create');
    // Route::post('store', 'StudentoGrupeController@store')->name('studentoGrupe.store');
    // Route::get('edit/{studentoGrupe}', 'StudentoGrupeController@edit')->name('studentoGrupe.edit');
    // Route::post('update/{studentoGrupe}', 'StudentoGrupeController@update')->name('studentoGrupe.update');

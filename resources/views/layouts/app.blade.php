@@ -64,10 +64,10 @@
             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
     
-                    <a class="dropdown-item" href="{{ route('kursai.index') }}"> 1. Visi kursai </a>
-{{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "naujo kurso" meniu langelyje                            --}}
+                    <a class="dropdown-item" href="{{ route('kursai.index') }}">                                  1. Visi kursai </a>
+{{--                      Pasirenkame tipa==1, tuomet studentas nematys/negalės redaguoti "naujo kurso" meniu langelyje                            --}}
                 @if(Auth::user()->tipa == 1)
-                    <a class="dropdown-item" href="{{ route('kursai.create') }}">2. Naujas kursas </a>
+                    <a class="dropdown-item" href="{{ route('kursai.create') }}">                                 2. Naujas kursas </a>
                 @endif
 </div>
         </li>
@@ -78,11 +78,11 @@
             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                <a class="dropdown-item" href="{{ route('grupe.index') }}"> 1. Visos grupes </a>
+                <a class="dropdown-item" href="{{ route('grupe.index') }}">                                       1. Visos grupes </a>
 
-{{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "naujos grupes" meniu langelyje                            --}}
+{{--                       Pasirenkame tipa==1, tuomet studentas nematys/negalės redaguoti "naujos grupes" meniu langelyje                            --}}
                 @if(Auth::user()->tipa == 1)
-                    <a class="dropdown-item" href="{{ route('grupe.create') }}"> 2. Nauja grupe</a>
+                    <a class="dropdown-item" href="{{ route('grupe.create') }}">                                   2. Nauja grupe</a>
                 @endif
 
 </div>
@@ -94,29 +94,43 @@
             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                <a class="dropdown-item" href="{{ route('paskaito.index') }}"> 1. Visos paskaitos</a>
+                <a class="dropdown-item" href="{{ route('paskaito.index') }}">                                   1. Visos paskaitos</a>
 
-{{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "naujos paskaitos" meniu langelyje                            --}}
+{{--                     Pasirenkame tipa==1, tuomet studentas nematys "naujos paskaitos" meniu langelyje                            --}}
                 @if(Auth::user()->tipa == 1)
-                    <a class="dropdown-item" href="{{ route('paskaito.create') }}"> 2. Nauja paskaita</a>
+                    <a class="dropdown-item" href="{{ route('paskaito.create') }}">                               2. Nauja paskaita</a>
                 @endif
 
 </div>
         </li>
-
+{{--                    Perkeliame if-ą aukščiau, kad studentas nematytų visų "user'ių"                                                  --}}
+                                          @if(Auth::user()->tipa == 1)
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 User <span class="caret"></span>
             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                <a class="dropdown-item" href="{{ route('user.index') }}"> 1. Visi user</a>
+                <a class="dropdown-item" href="{{ route('user.index') }}">                                          1. Visi user</a>
 
-{{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "nauju user'iu" meniu langelyje                            --}}
-                @if(Auth::user()->tipa == 1)
-                    <a class="dropdown-item" href="{{ route('user.create') }}"> 2. Naujas user</a>
-                @endif
+{{--                                 Pasirenkame tipa==1, tuomet studentas nematys "nauju user'ių" meniu langelyje                            --}}
+                
+                    <a class="dropdown-item" href="{{ route('user.create') }}">                                     2. Naujas user</a>
+               
         </li>
+ @endif
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                <a class="dropdown-item" href="{{ route('studentoGrupe.index') }}">                                 1. Visi studentoGrupe</a>
+
+                {{--                                 Pasirenkame tipa==1, tuomet studentas nematys "nauju failų" meniu langelyje                            --}}
+                @if(Auth::user()->tipa == 2)
+                    <a class="dropdown-item" href="{{ route('studentoGrupe.create') }}">                            2. Naujas studentoGrupe</a>
+                @endif
+
+</div>
+
 
 
         <li class="nav-item dropdown">
@@ -125,11 +139,11 @@
             </a>
 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                <a class="dropdown-item" href="{{ route('failai.index') }}"> 1. Visi failai</a>
+                <a class="dropdown-item" href="{{ route('failai.index') }}">                                         1. Visi failai</a>
 
-                {{--                                 Pasirenkame tipa==1, tuomet studentas nematys/negales redaguoti "nauju failu" meniu langelyje                            --}}
+                {{--                                 Pasirenkame tipa==1, tuomet studentas nematys "nauju failų" meniu langelyje                            --}}
                 @if(Auth::user()->tipa == 1)
-                    <a class="dropdown-item" href="{{ route('failai.create') }}"> 2. Naujas failas</a>
+                    <a class="dropdown-item" href="{{ route('failai.create') }}">                                    2. Naujas failas</a>
                 @endif
 
 </div>

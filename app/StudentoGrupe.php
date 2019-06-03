@@ -15,4 +15,6 @@ class StudentoGrupe extends Model
     {
         return $this->belongsTo('App\Grupe', 'grupe_id', 'id');
     }
+
+   
 }

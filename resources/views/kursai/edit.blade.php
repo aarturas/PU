@@ -17,7 +17,7 @@
      @extends('layouts.app')
      @section('content')
                            <h6 class="text-center">edit.blade.kursai</h6>
-                           <h3 class="text-center">kursų sąrašas ir redagavimas</h3>
+                           <h3 class="text-center">Kursų sąrašas ir redagavimas</h3>
      <div class="container">
      <div class="row justify-content-center">
      <div class="col-md-8">
@@ -38,7 +38,7 @@
                                                  <label style="color:blue">Pasirinkti grupę</label>
                         <select class="form-control" id="grupe_id" name="grupe_id">
                              @foreach (App\Grupe::all() as $item)
-                                  <option value="{{$item->id}}" @if($item->id==$kursai->grupe_id) selected @endif>{{$item->name}}</option>
+                                  <option value=" {{$item->id}}"  @if($item->id==$kursai->grupe_id) selected @endif>{{$item->name}} </option>
                              @endforeach
                         </select>
             <small class="form-text text-muted">Prašom pasirinkti grupę.</small>

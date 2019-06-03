@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123'),
             'surname' => 'Grumblinas',
             'tipa' => 1,
-            'phone' => '123'
+            'phone' => '123 23 345'
         ]);
 
         DB::table('users')->insert([
@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123'),
             'surname' => 'Grigaitis',
             'tipa' => 1,
-            'phone' => '123'
+            'phone' => '123 56 776'
         ]);
 
         DB::table('users')->insert([
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123'),
             'surname' => 'Rakaitis',
             'tipa' => 1,
-            'phone' => '123'
+            'phone' => '123 76 987'
         ]);
 
         DB::table('users')->insert([
@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123'),
             'surname' => 'Dudenas',
             'tipa' => 1,
-            'phone' => '123'
+            'phone' => '123 76 321'
         ]);
 
         DB::table('users')->insert([
@@ -53,47 +53,97 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123'),
             'surname' => 'Trumpickas',
             'tipa' => 1,
-            'phone' => '123'
+            'phone' => '123 87 009'
         ]);
+
+
+
+        DB::table('users')->insert([
+            'name' => 'Tomas',
+            'email' => 'tomas@gmail.com',
+            'password' => Hash::make('123'),
+            'surname' => 'Triaukaitis',
+            'tipa' => 2,
+            'phone' => '263 87 209'
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Kazimierijus',
+            'email' => 'tundrys@gmail.com',
+            'password' => Hash::make('123'),
+            'surname' => 'Tundrys',
+            'tipa' => 2,
+            'phone' => '876 56 009'
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Bladas',
+            'email' => 'srukas@gmail.com',
+            'password' => Hash::make('123'),
+            'surname' => 'Srukas',
+            'tipa' => 2,
+            'phone' => '373 87 329'
+        ]);
+
 
 
         
         DB::table('kursais')->insert([
+            'name' => 'TINKLALAPIŲ KŪRIMAS'
+        ]);
+
+        DB::table('kursais')->insert([
+            'name' => 'JAVA'
+        ]);
+
+        DB::table('kursais')->insert([
+            'name' => 'ANDROID'
+        ]);
+
+        DB::table('kursais')->insert([
+            'name' => 'OBJEKTINIS PROGRAMAVIMAS'
+        ]);
+
+        DB::table('kursais')->insert([
+            'name' => 'GRAFINIS DIZAINAS'
+        ]);
+
+        DB::table('kursais')->insert([
+            'name' => 'DUOMENŲ ANALITIKA'
+        ]);
+
+        DB::table('kursais')->insert([
+            'name' => 'TESTAVIMAS'
+        ]);
+
+        DB::table('kursais')->insert([
+            'name' => 'BIG DATA kursai'
+        ]);
+
+
+
+
+
+        DB::table('grupes')->insert([
+            'name' => 'C# 05'
+        ]);
+
+        DB::table('grupes')->insert([
+            'name' => 'MATLAB 02'
+        ]);
+
+
+
+
+
+        DB::table('paskaitos')->insert([
             'name' => 'PHP'
         ]);
 
-        DB::table('kursais')->insert([
-            'name' => 'Java'
-        ]);
-
-        DB::table('kursais')->insert([
-            'name' => 'Python'
-        ]);
-
-        DB::table('kursais')->insert([
-            'name' => 'JavaScript'
-        ]);
-
-        DB::table('kursais')->insert([
-            'name' => 'MATLAB'
-        ]);
-
-        DB::table('kursais')->insert([
-            'name' => 'C/C++'
-        ]);
-
-        DB::table('kursais')->insert([
-            'name' => 'C#'
+        DB::table('paskaitos')->insert([
+            'name' => 'TESTAVIMAS'
         ]);
 
 
-
-        // DB::table('grupes')->insert([
-        //     'name' => 'C# 2008-01-12:prasidėjo 2008-01-12 pabaiga: 2008-06-13'
-        // ]);
-
-        // DB::table('grupes')->insert([
-        //     'name' => 'MATLAB 2009-01-12:prasidėjo 2009-01-12 pabaiga: 2009-06-13'
-        // ]);
     }
 }

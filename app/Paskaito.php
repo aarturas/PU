@@ -27,7 +27,7 @@ class Paskaito extends Model
 
     public function PaskaitoStudentoGrupe()
     {
-        return $this->hasMany('App\StudentoGrupe', 'grupe_id', 'id');
+        return $this->hasMany('App\StudentoGrupe', 'g_id', 'id');
     }
 
 
