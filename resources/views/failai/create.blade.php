@@ -14,6 +14,8 @@
 
 {{--                                      1. Renkamės (select'u) paskaitas / kursus is sąrašo                                      --}}
 <div class="form-group">
+              <label for="name">Paskaitu sarasas</label>
+
             <select class="form-control"name="paskaito_id">
                     @foreach (App\Paskaito::all() as $item)
                         <option value="{{$item->id}}">{{$item->pavadinimas}}</option>
@@ -27,9 +29,9 @@
        <small id="emailHelp" class="form-text text-muted">Prašome įkelti naują skaidrę.</small>
 </div>    
  
-{{--                                      3.  Paskaitos pavadinimas                                                        --}}
+{{--                                      3.  Paskaitu sarasas                                                       --}}
 <div class="form-group">
-       <label for="name">Grupės pavadinimas</label>
+       <label for="name">Grupes pavadinimas</label>
        <input type="text" class="form-control" name="name" id="name" placeholder="Įrašykite naują grupę" value="{{old('name', '')}}">
        <small id="emailHelp" class="form-text text-muted">Prašom įrašyti paskaitos pavadinimą.</small>
 </div>

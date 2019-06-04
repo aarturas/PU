@@ -19,7 +19,7 @@
 
 {{--  -------------------------------- Rodo dėstytojui viską ir redagavimą, ir trinimą  ------------------------------------------------------------------------------ --}}
 
-                                    @if(Auth::user()->tipa == 1 )
+                {{-- @if(Auth::user()->tipa == 1 ) --}}
 
 <div class="row" style="margin-bottom: 10px;">
 <div class="col-sm-8">
@@ -55,7 +55,7 @@
 </div>
 </div>
 
-                                    @endif
+                                    {{-- @endif --}}
 
                                     @endif
 
