@@ -15,7 +15,7 @@
      $grupe->GrupeStudentoGrupe->pluck('studento_id')->toArray() -   yra masyvas su visais studentu id, kurie dalyvauja sioje grupeje                                 --}}
 {{-- Pridedame į pradžia  - @if(Auth::user()->tipa == 1 ||, kad būtų galima pasirinkti tik dėstytoją                                                                  --}}
 
-                                    @if(Auth::user()->tipa == 1 || in_array(Auth::user()->id, $grupe->GrupeStudentoGrupe->pluck('studento_id')->toArray()))
+                @if(Auth::user()->tipa == 1 || in_array(Auth::user()->id, $grupe->GrupeStudentoGrupe->pluck('studento_id')->toArray()))
 
 {{--  -------------------------------- Rodo dėstytojui viską ir redagavimą, ir trinimą  ------------------------------------------------------------------------------ --}}
 

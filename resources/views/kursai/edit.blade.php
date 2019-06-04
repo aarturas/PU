@@ -1,19 +1,3 @@
-
-
-    @if(Auth::user()->tipa == 1)
-
-
-{{-- 
-        <form action="{{route('kursai.update', [$kursai])}}" method = "POST">
-                <input type="text" name="name" value="{{$kursai->name}}">
-                                                                             @csrf
-                <button type="submit">Redaguoti</button>
-        </form> --}}
-
-      
-     {{-- @endif --}}
-
-
      @extends('layouts.app')
      @section('content')
                            <h6 class="text-center">edit.blade.kursai</h6>
@@ -28,7 +12,7 @@
      <div class="col-sm-12">
      
                      {{-- Matys tik destytojas --}}
-                {{-- @if(Auth::user()->tipa == 1) --}}
+                @if(Auth::user()->tipa == 1)
                                               
        </div>
 

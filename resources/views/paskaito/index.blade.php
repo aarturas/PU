@@ -14,13 +14,14 @@
      Auth::user()->id -   yra to userio kuris siuo metu prisijunges id
      $paskaito->GrupeStudentoGrupe->pluck('studento_id')->toArray() -   yra masyvas su visais studentu id, kurie dalyvauja sioje paskaitoje    --}}
 
-{{--    @if(in_array(Auth::user()->id, $paskaito->GrupeStudentoGrupe->pluck('studento_id')->toArray()))                                        --}}
 
         @if(in_array(Auth::user()->id, App\Grupe::where('id',$paskaito->grupe_id)->first()->GrupeStudentoGrupe->pluck('studento_id')->toArray()))
 
+
+                @if(Auth::user()->tipa == 1 )
+
 {{--  --------------------------------- 1.  Rodo dėstytojui viską ir redagavimą, ir trinimą  ------------------------------------------------------------------------------ --}}
 
-                                                       @if(Auth::user()->tipa == 1 )
 
 <div class="row" >
 <div class="col-sm-8">
@@ -37,7 +38,7 @@
 </div>
 
 
-@else
+                                                        @else
 {{--  -------------------------------- 2.  Rodo studentui tik sąrašą be redagavimo ir trinimo  ----------------------------------------------------------------------- --}}
 
 

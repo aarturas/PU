@@ -21,6 +21,8 @@
 {{-- @if(in_array(Auth::user()->id, App\Grupe::where('id',$paskaito->grupe_id)->first()->GrupeStudentoGrupe->pluck('studento_id')->toArray()))  //   is paskaitu --}}
 {{-- @if(in_array(Auth::user()->id, App\Kursai::where('id',$kursai->grupe_id)->get()->GrupeStudentoGrupe->pluck('studento_id')->toArray())) --}}
 
+{{-- @if(in_array(Auth::user()->id, $kursai->('id',$kursai->GrupeStudentoGrupe)->pluck('studento_id')->toArray())) --}}
+
 {{--  --------------------------------- 1.  Rodo dėstytojui viską ir redagavimą, ir trinimą  ------------------------------------------------------------------------------ --}}
 
                                             @if(Auth::user()->tipa == 1 )
@@ -51,7 +53,7 @@
 <div class="row" >
 <div class="col-md-8">
 
-        <p>Kursai id :  {{ $kursai->id }}. {{ $kursai->name}} </p>
+             <p>Kursai id :  {{ $kursai->id }}. {{ $kursai->name}} </p>
           
 </div>
 </div>
@@ -70,5 +72,9 @@
 </div>
 </div>
 </div>
+
+
+
+
 
 @endsection
