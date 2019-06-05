@@ -12,14 +12,14 @@
 
 {{-- in_array -   php funcija iesko masyve reiksmiu
      Auth::user()->id -   yra to userio kuris siuo metu prisijunges id
-     $grupe->GrupeStudentoGrupe->pluck('studento_id')->toArray() -   yra masyvas su visais studentu id, kurie dalyvauja sioje grupeje                                 --}}
+     $grupe->GrupeStudentoGrupe->pluck('studento_id')->toArray() -   yra masyvas su visais studentu id, kurie dalyvauja sioje grupeje      --}}
+                                
 {{-- Pridedame į pradžia  - @if(Auth::user()->tipa == 1 ||, kad būtų galima pasirinkti tik dėstytoją                                                                  --}}
 
-                @if(Auth::user()->tipa == 1 || in_array(Auth::user()->id, $grupe->GrupeStudentoGrupe->pluck('studento_id')->toArray()))
+                @if(Auth::user()->tipa == 1)
 
 {{--  -------------------------------- Rodo dėstytojui viską ir redagavimą, ir trinimą  ------------------------------------------------------------------------------ --}}
 
-                {{-- @if(Auth::user()->tipa == 1 ) --}}
 
 <div class="row" style="margin-bottom: 10px;">
 <div class="col-sm-8">
@@ -28,18 +28,20 @@
 </div>
     <a href="{{route('grupe.edit', $grupe)}}" {{$grupe->name}}  {{$grupe->started_at}} {{$grupe->finished_at}}>
 
-                                                      <button type="submit" class="btn btn-primary">Redaguoti</button>
+                                        <button type="submit" class="btn btn-primary">Redaguoti</button>
     </a>
-                <form action="{{route('grupe.destroy', $grupe)}}" method="POST">
-        @csrf
-                                                      <button type="submit" class="btn btn-danger">Trinti</button>
-                </form>
+        <form action="{{route('grupe.destroy', $grupe)}}" method="POST">
+@csrf
+                                        <button type="submit" class="btn btn-danger">Trinti</button>
+        </form>
 </div>
 
+{{--  -------- (@else)  Rodo studentui tik sąrašą be redagavimo ir trinimo  ---------------------------------------------------------------- --}}
+                @else
 
 
-                                     @else
-{{--  --------------------------------  Rodo studentui tik sąrašą be redagavimo ir trinimo  ----------------------------------------------------------------------- --}}
+@if(in_array(Auth::user()->id, $grupe->GrupeStudentoGrupe->pluck('studento_id')->toArray()))
+
 <div class="row" >
 <div class="col-md-12">
 <div class="card">
@@ -47,16 +49,18 @@
 <div class="list-group">
 <div class="row" style="margin-bottom: 12px;">
 <div class="col-md-8">
-    
-         <p>Grupės id : {{ $grupe->id }} | {{ $grupe->name}} | pradžia: {{$grupe->started_at}}</p>
+
+    {{-- Rodome, ką matys tik studentas --}}
+
+                    <p>Grupės id : {{ $grupe->id }} | {{ $grupe->name}} | pradžia: {{$grupe->started_at}}</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 
-                                    {{-- @endif --}}
 
+                                    @endif
                                     @endif
 
                                     @endforeach

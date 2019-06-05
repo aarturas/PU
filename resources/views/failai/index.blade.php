@@ -14,57 +14,59 @@
 <div class="col-md-5">
 <div class="col-md-3">
 
-        {{-- @if(Auth::user()->tipa == 1 || in_array(Auth::user()->id, $grupe->GrupeStudentoGrupe->pluck('failai')->toArray())) --}}
-        {{-- @if(in_array(Auth::user()->id, App\Paskaito::where('id',$paskaito->failai)->first()->GrupeStudentoGrupe->pluck('studento_id')->toArray())) --}}
+{{-- @if(Auth::user()->tipa == 1 || in_array(Auth::user()->id, $grupe->GrupeStudentoGrupe->pluck('failai')->toArray()))        --}}
+{{-- @if(in_array(Auth::user()->id, App\Paskaito::where('id',$paskaito->failai)->first()->GrupeStudentoGrupe->pluck('studento_id')->toArray())) --}}
+{{-- {{$failai->FailaiPaskaito->GrupePaskaito->GrupeStudentoGrupe->pluck('studento_id')->toArray()}} --}}
+{{-- {{dd($failai->FailaiPaskaito->PaskaitoGrupe->GrupeStudentoGrupe->pluck('studento_id')->toArray())}} --}}
 
 
+{{-- @if(in_array(Auth::user()->id, $failai->FailaiPaskaito->PaskaitoGrupe->GrupeStudentoGrupe->pluck('studento_id')->toArray())) --}}
 
  {{--  --------------------   photo/skaidrės įkėlimas: rodo nuotraukas   --------------------------------------------------------------------    --}}
 
                  <img src="{{asset('img/'.$failai->file)}}" style="object-fit: contain; height: 100px;"> 
-
-                 @if(Auth::user()->tipa == 1
-
-</div>
-
 </div>
 </div>
+</div>
+{{--  ------------------------------  Mato tik destytojas   --------------------------------------------------------------  --}}
+                @if(Auth::user()->tipa == 1)
 
 <div class="row" style="margin-bottom: 10px;">
 
-{{--  ------------------ Failu langelis su grupes pavadinimu ir nuoroda i show informacijos puslapi  --------------------------------------------    --}}
+{{--  ------------------ 1.  Failu langelis su grupes pavadinimu ir nuoroda i show informacijos puslapi  --------------------------------------------    --}}
 
-
-<div class="col-md-6">   
+<div class="col-sm-6">   
         <a href="{{route('failai.show', $failai)}}" class="list-group-item list-group-item-action list-group-item-primary" enctype="multipart/form-data">{{$failai->name}}</a>
-
 </div>
 
-                                @else 
-
-{{--  ------------------  Failu redagavimas su mygtuku "Redaguoti"  ----------------------------------------------------------------------------   --}}
+{{--  ------------------ 2.  Failu redagavimas su mygtuku "Redaguoti"  ----------------------------------------------------------------------------   --}}
 
         <a href="{{route('failai.edit', $failai)}}" {{$failai->file}}>
-                                                                       <button type="submit" class="btn btn-primary">Redaguoti</button></a>
+                                                            <button type="submit" class="btn btn-primary">Redaguoti</button></a>
 
-{{--  -----------------  Failu trinimas su mygtuku  ---------------------------------------------------------------------------------------------  --}}
+{{--  ------------------ 3.  Failu trinimas su mygtuku "Trinti"  ------------------------------------------------------------------------------------  --}}
 
         <form action="{{route('failai.destroy', $failai)}}" method="POST">
 @csrf
-                                                                       <button type="submit" class="btn btn-danger">Trinti</button>
+                                                            <button type="submit" class="btn btn-danger">Trinti</button>
         </form>
            
 <div class="form-group">
-{{--  ------------------------  foto failų redagavimas  ---------------------------------------------------------------------------------------    --}}
+{{--  ------------------ 4.  Foto failų redagavimas  ---------------------------------------------------------------------------------------    --}}
 
         @if($failai->photo)
                 <a href="{{route('failai.edit', $failai)}}">
                 <img src="{{asset('img/'.$failai->photo)}}" style="object-fit: contain; height: 100px;">
                 </a>
+        @else  
 
+        @if(in_array(Auth::user()->id, $failai->FailaiPaskaito->PaskaitoGrupe->GrupeStudentoGrupe->pluck('studento_id')->toArray()))
+
+                <p>Failai : {{ $failai->id }} | {{ $failai->name}} </p>
 
         @endif
-           @endif
+        @endif 
+        @endif
 
 </div>
 </div>

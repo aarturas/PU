@@ -37,10 +37,9 @@
                                         </form>
 </div>
 
-
                                                         @else
+                                                        
 {{--  -------------------------------- 2.  Rodo studentui tik sąrašą be redagavimo ir trinimo  ----------------------------------------------------------------------- --}}
-
 
 <div class="row" >
 <div class="col-md-12">
