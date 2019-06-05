@@ -25,11 +25,12 @@
  {{--  --------------------   photo/skaidrės įkėlimas: rodo nuotraukas   --------------------------------------------------------------------    --}}
 
                  <img src="{{asset('img/'.$failai->file)}}" style="object-fit: contain; height: 100px;"> 
+                
 </div>
 </div>
 </div>
 {{--  ------------------------------  Mato tik destytojas   --------------------------------------------------------------  --}}
-                @if(Auth::user()->tipa == 1)
+                            @if(Auth::user()->tipa == 1)
 
 <div class="row" style="margin-bottom: 10px;">
 
@@ -61,16 +62,19 @@
         @else  
 
         @if(in_array(Auth::user()->id, $failai->FailaiPaskaito->PaskaitoGrupe->GrupeStudentoGrupe->pluck('studento_id')->toArray()))
+        
 
-                <p>Failai : {{ $failai->id }} | {{ $failai->name}} </p>
+                <p> Failai : {{$failai->id}} {{ $failai->file }} | {{ $failai->name}} </p>
+                {{-- <p>Failai{{$failai->name}}</p> --}}
 
         @endif
         @endif 
         @endif
+                                           @endforeach
+</div>
 
 </div>
-</div>
-                                           @endforeach
+
 </div>
 </div>
 </div>
